@@ -1,16 +1,38 @@
 # Easy Route Auto AI
 
-**An LLM rental assistant that can't book the wrong car.** Customers search, compare, ask policy
-questions and reserve in plain English. The language model (or an offline grammar) only
-*proposes* a typed plan. The server reconciles that plan against the customer's own words,
-answers every fact from SQL or a cited policy sentence, and lets nothing change state without
-an explicit customer command and a staff approval.
-
-> Taksh Pathak's independent portfolio implementation. All fleet records, rates, policies and
-> identities are synthetic. The public [Easy Route Auto](https://easyrouteauto.com/) website
-> was used only for rental-domain context. See [NOTICE.md](NOTICE.md).
+**An AI car-rental assistant that can't book the wrong car.** Customers search the fleet,
+compare cars, ask policy questions and reserve, all in plain English. A language model reads
+each message and proposes a typed plan. The server checks that plan against what the customer
+actually said, answers every fact from the database or a cited policy document, and changes
+nothing without an explicit customer command and a staff approval.
 
 <p align="center"><img src="docs/images/1-no-match.png" width="49%" alt="Seven seats at $950: honest no-match with the saved search shown as SQL-enforced chips"> <img src="docs/images/3-confirmed.png" width="49%" alt="Staff-approved reservation after reload"></p>
+
+**Contents:** [My internship](#my-internship-at-easy-route-auto) ·
+[Results](#results-v060-measured-in-this-release) · [Demo](#three-minute-demo) ·
+[How it works](#how-it-works) · [Evaluation](#evaluation) · [Run it](#run-it)
+
+## My internship at Easy Route Auto
+
+**AI Intern, Generative AI & LLM Applications** · Easy Route Auto LLC, Tempe, Arizona ·
+May–August 2025
+
+[Easy Route Auto](https://easyrouteauto.com/) is a Phoenix-area car rental company focused
+on long-term rentals, where customers request a car and staff review and arrange pickup.
+During my internship I worked on bringing AI into that customer journey:
+
+- **AI customer assistant:** answered vehicle questions, recommended available cars,
+  qualified leads and booked appointments.
+- **RAG backend:** connected the conversational assistant to vehicle inventory, customer
+  records and scheduling with FastAPI, so answers were grounded in current business data.
+- **Staff dashboards:** gave employees visibility into customer conversations, lead activity
+  and booking status.
+
+This repository is my portfolio implementation of that assistant. It covers the same customer
+journey: discovery, comparison, policy questions, quotes and staff-approved reservations. It
+adds a rigorous evaluation suite, server-enforced safety guarantees and full automated
+testing. It runs on synthetic fleet, pricing and policy data and contains no Easy Route Auto
+source code or customer data (see [NOTICE.md](NOTICE.md)).
 
 ## Results (v0.6.0, measured in this release)
 
