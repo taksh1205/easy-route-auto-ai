@@ -35,10 +35,11 @@ This repository contains the code I developed and implemented for this AI assist
 my Easy Route Auto internship, together with subsequent portfolio-focused enhancements. It
 covers the customer journey I worked on: discovery, comparison, policy questions, quotes and
 staff-approved reservations. The additional work includes a rigorous evaluation suite,
-server-enforced safety guarantees and full automated testing. Here, a PostgreSQL database plays the role HQ Rental plays in production: it is the
-single source of truth for the fleet, rates and availability, and every recommendation and
-quote is read from it live. It runs on synthetic fleet, pricing and policy data and contains no
-Easy Route Auto source code, customer data or HQ Rental integration (see [NOTICE.md](NOTICE.md)).
+server-enforced safety guarantees and full automated testing. In this public
+version, PostgreSQL substitutes for the production HQ Rental system as the
+source of fleet, pricing and availability records. Recommendations and quotes
+are read from the synthetic dataset. No live customer records or HQ Rental
+integration are included (see [NOTICE.md](NOTICE.md)).
 
 ## Results (v0.6.0, measured in this release)
 
