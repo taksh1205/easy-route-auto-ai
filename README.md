@@ -18,21 +18,26 @@ nothing without an explicit customer command and a staff approval.
 May–August 2025
 
 [Easy Route Auto](https://easyrouteauto.com/) is a Phoenix-area car rental company focused
-on long-term rentals, where customers request a car and staff review and arrange pickup.
-During my internship I worked on bringing AI into that customer journey:
+on long-term rentals, where customers request a car and staff review and arrange pickup. Its
+fleet, vehicle availability and reservations are managed in **HQ Rental Software**, the
+company's rental management backend. During my internship I worked on bringing AI into that
+customer journey:
 
 - **AI customer assistant:** answered vehicle questions, recommended available cars,
   qualified leads and booked appointments.
-- **RAG backend:** connected the conversational assistant to vehicle inventory, customer
-  records and scheduling with FastAPI, so answers were grounded in current business data.
+- **RAG backend:** connected the conversational assistant to the fleet and availability data
+  managed in HQ Rental, customer records and scheduling, with FastAPI, so answers reflected
+  current business data.
 - **Staff dashboards:** gave employees visibility into customer conversations, lead activity
   and booking status.
 
 This repository is my portfolio implementation of that assistant. It covers the same customer
 journey: discovery, comparison, policy questions, quotes and staff-approved reservations. It
 adds a rigorous evaluation suite, server-enforced safety guarantees and full automated
-testing. It runs on synthetic fleet, pricing and policy data and contains no Easy Route Auto
-source code or customer data (see [NOTICE.md](NOTICE.md)).
+testing. Here, a PostgreSQL database plays the role HQ Rental plays in production: it is the
+single source of truth for the fleet, rates and availability, and every recommendation and
+quote is read from it live. It runs on synthetic fleet, pricing and policy data and contains no
+Easy Route Auto source code, customer data or HQ Rental integration (see [NOTICE.md](NOTICE.md)).
 
 ## Results (v0.6.0, measured in this release)
 
