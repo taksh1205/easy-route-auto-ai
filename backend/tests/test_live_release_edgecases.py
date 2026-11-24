@@ -37,7 +37,6 @@ def test_explicit_out_of_range_ordinal_returns_conflict_before_model(client, mon
         "Tempe SUV from 2031-04-01 to 2031-04-08 at most $950 monthly"
     )
     assert result["ids"] == [6, 7]
-    customer.ask("Quote the third car.")
     response = client.post(
         customer.root + "/rentals/ask",
         headers=customer.headers,
