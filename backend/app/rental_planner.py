@@ -47,6 +47,9 @@ Operations
 - policy: any informational question (pickup, cancellation, extensions, billing, documents,
   expiry, anything unsupported).
 - clarify: ambiguous, contradictory, or unsupported requirements.
+  A complete but terse search request is an edit even without "find" or "show".
+  "strictly below" is an exclusive maximum; "can't go over" is an inclusive
+  maximum. Neither is a minimum price or grounds for clarification.
 
 Fields (edit only; leave unmentioned fields null and flags false)
 - Extract only what the CURRENT message explicitly states. Do not carry values forward;
