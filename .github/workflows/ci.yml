@@ -9,7 +9,8 @@ concurrency:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    # Pinned: the pinned Playwright release does not support newer runner images.
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       EASY_EVIDENCE_DIR: ${{ github.workspace }}/ci-evidence
