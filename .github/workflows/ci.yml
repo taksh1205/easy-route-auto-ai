@@ -20,7 +20,10 @@ jobs:
         image: postgres:17
         env: {POSTGRES_USER: easy, POSTGRES_PASSWORD: testonly, POSTGRES_DB: easy}
         ports: ['5432:5432']
-        options: --health-cmd='pg_isready -U easy' --health-interval=3s --health-retries=20
+        options: >-
+          --health-cmd "pg_isready -U easy"
+          --health-interval 3s
+          --health-retries 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
