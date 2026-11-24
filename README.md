@@ -31,10 +31,11 @@ customer journey:
 - **Staff dashboards:** gave employees visibility into customer conversations, lead activity
   and booking status.
 
-This repository is my portfolio implementation of that assistant. It covers the same customer
-journey: discovery, comparison, policy questions, quotes and staff-approved reservations. It
-adds a rigorous evaluation suite, server-enforced safety guarantees and full automated
-testing. Here, a PostgreSQL database plays the role HQ Rental plays in production: it is the
+This repository contains the code I developed and implemented for this AI assistant during
+my Easy Route Auto internship, together with subsequent portfolio-focused enhancements. It
+covers the customer journey I worked on: discovery, comparison, policy questions, quotes and
+staff-approved reservations. The additional work includes a rigorous evaluation suite,
+server-enforced safety guarantees and full automated testing. Here, a PostgreSQL database plays the role HQ Rental plays in production: it is the
 single source of truth for the fleet, rates and availability, and every recommendation and
 quote is read from it live. It runs on synthetic fleet, pricing and policy data and contains no
 Easy Route Auto source code, customer data or HQ Rental integration (see [NOTICE.md](NOTICE.md)).
