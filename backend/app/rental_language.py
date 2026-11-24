@@ -93,6 +93,14 @@ def check_comparators(message, plan):
         text,
     )
     seat_min = seat_min.replace("no more than", "at most")
+    # A negated upper-price expression is not an unsupported price floor.
+    seat_min = re.sub(
+        r"\b(?:can'?t|cannot|won't|don't want to|do not want to|shouldn't|not|never)\s+"
+        r"(?:go\s+|spend\s+|pay\s+|be\s+)?(?:over|above|more than|beyond|exceed(?:ing)?)"
+        r"(?=\s*\$)",
+        "",
+        seat_min,
+    )
     if len(re.findall(r"\$\s*\d", text)) > 1:
         raise Unclear("Please give one maximum budget and its billing period.")
     if plan.budget_comparator in ("minimum", "range") or (

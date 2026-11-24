@@ -467,6 +467,18 @@ async def ask(cid: str, b: Followup, db: DB, x_session_token: TOKEN = None):
         raise HTTPException(409, "Refresh rental results before referring to them.")
     snapshot = dict(ctx.data)
     db.rollback()
+    # An explicit ordinal outside the displayed results is a conflict even
+    # when the language model mistakenly classifies the command as unclear.
+    try:
+        direct_command = authorized_reference(b.message)
+    except Unclear:
+        direct_command = None
+    if (
+        direct_command is not None
+        and direct_command.position is not None
+        and direct_command.position > len(snapshot.get("ids") or [])
+    ):
+        raise HTTPException(409, "Choose a valid position from the current results.")
     try:
         plan, usage, reconciliation = await interpret(b.message, snapshot, False)
         if plan.operation == "policy":
