@@ -1,0 +1,2996 @@
+{
+  "mode": "deterministic",
+  "model": null,
+  "dataset_sha256": "bd193dc51aed58eae6f503eb05ff18e3d41ece3b099eac50d5091ac4cd10246f",
+  "scenarios": [
+    {
+      "id": "independent-field-edits",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              9
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "sedan",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "sedan",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              9
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "sedan",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "sedan",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              9
+            ],
+            "turn": "ad3da82eea9adf4f1c21676a",
+            "vehicles": [
+              {
+                "id": 9,
+                "name": "2020 Toyota Camry",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "sedan",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 9,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 79000
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 3500
+                  }
+                ],
+                "total_cents": 24500
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 45.58242899997822
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "message": "Keep the same budget but switch to an SUV",
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "ebf35ba19104858ecd3de858",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "operation": "edit",
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 21.847349999916332
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-05-01",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "message": "Make it one calendar month instead",
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-05-01",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-05-01",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "89da307661f92a4d88727b6a",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-05-01",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 1,
+                    "unit_cents": 87500
+                  }
+                ],
+                "total_cents": 87500
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-05-01",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 1,
+                    "unit_cents": 93500
+                  }
+                ],
+                "total_cents": 93500
+              }
+            ],
+            "operation": "edit",
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 14.862776000200029
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "replace-budget",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "1c9c67c4ee40178b5583bfd1",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 9.68160499996884
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "ids": [],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 80000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "message": "Lower the cap to $800 per month",
+          "observed": {
+            "ids": [],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 80000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 80000
+            },
+            "ids": [],
+            "turn": "bb58617885d9089083f96199",
+            "vehicles": [],
+            "operation": "edit",
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 9.218656999792074
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "seven-seat-no-match",
+      "steps": [
+        {
+          "action": "discover",
+          "expected": {
+            "ids": [],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": 7,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "message": "Find a seven-seat SUV in Tempe from 2031-04-01 through 2031-04-08 under $950 monthly",
+          "observed": {
+            "ids": [],
+            "query": {
+              "min_seats": 7,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": 7,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [],
+            "turn": "0c8512410f56f18a1ca7dbac",
+            "vehicles": [],
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 16.32478000010451
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "seven-seat-qualifier",
+      "steps": [
+        {
+          "action": "discover",
+          "expected": {
+            "ids": [
+              5
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": 7,
+              "budget_cents": 110000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "message": "Tempe SUV with 7 seats 2031-04-01 to 2031-04-08 under $1100 per month",
+          "observed": {
+            "ids": [
+              5
+            ],
+            "query": {
+              "min_seats": 7,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 110000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": 7,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 110000
+            },
+            "ids": [
+              5
+            ],
+            "turn": "d29cf8c909327a7451d0963b",
+            "vehicles": [
+              {
+                "id": 5,
+                "name": "2021 Kia Sorento",
+                "seats": 7,
+                "min_seats": 7,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 110000,
+                "vehicle_id": 5,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 104000
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 5600
+                  }
+                ],
+                "total_cents": 39200
+              }
+            ],
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 13.46423799986951
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "out-of-range",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "1cfc2c5187e2df23db7710d3",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 11.240455999995902
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "http": 409,
+            "record_count": 0
+          },
+          "message": "Quote the third vehicle",
+          "observed": {
+            "http": 409,
+            "record_count": 0
+          },
+          "actual": {
+            "detail": "Choose a valid position from the current results.",
+            "http": 409,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 6.396442999857754
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "unselected",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "8122ffabb3004726c499238b",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 11.744248000013613
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "clarifies": true,
+            "record_count": 0
+          },
+          "message": "Quote that vehicle",
+          "observed": {
+            "clarifies": true,
+            "record_count": 0
+          },
+          "actual": {
+            "clarification": "Please select a vehicle from the displayed list first.",
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 6.076983000184555
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "reordered-selection",
+      "steps": [
+        {
+          "action": "rate",
+          "expected": {},
+          "vehicle": 7,
+          "monthly": 85000,
+          "observed": {},
+          "actual": {
+            "http": null,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 1.6718080000828195
+        },
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              7,
+              6
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              7,
+              6
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              7,
+              6
+            ],
+            "turn": "7df76fc390285dee40e193fa",
+            "vehicles": [
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 85000
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              },
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 16.069053999899552
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "selection.id": 7
+          },
+          "message": "Select the first one",
+          "observed": {
+            "selection.id": 7
+          },
+          "actual": {
+            "selection": {
+              "id": 7,
+              "name": "2017 Toyota RAV4",
+              "seats": 5,
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 7,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 85000
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4400
+                }
+              ],
+              "total_cents": 30800
+            },
+            "operation": "select",
+            "usage": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 6.635195999933785
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "quote.terms.vehicle_id": 7,
+            "record_count": 1
+          },
+          "message": "Quote that vehicle",
+          "observed": {
+            "quote.terms.vehicle_id": 7,
+            "record_count": 1
+          },
+          "actual": {
+            "quote": {
+              "id": "c7596d15-0f48-4d8b-ab62-9eb062f01ff8",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 85000
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              },
+              "expires": 1932228900
+            },
+            "operation": "quote",
+            "usage": null,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "quoted"
+          },
+          "passed": true,
+          "latency_ms": 9.560627000155364
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "stale-display",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "288f13939d6ba4f9da173e83",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 11.917121999886149
+        },
+        {
+          "action": "disable",
+          "expected": {},
+          "vehicle": 6,
+          "observed": {},
+          "actual": {
+            "http": null,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 1.8028300000878517
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "http": 409,
+            "record_count": 0
+          },
+          "message": "Quote the first vehicle",
+          "observed": {
+            "http": 409,
+            "record_count": 0
+          },
+          "actual": {
+            "detail": "Choose a valid position from the current results.",
+            "http": 409,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 6.483775999868158
+        },
+        {
+          "action": "restore",
+          "expected": {
+            "ids": [
+              7
+            ],
+            "rotated": true
+          },
+          "observed": {
+            "ids": [
+              7
+            ],
+            "rotated": true
+          },
+          "actual": {
+            "displayed": [
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "mode": "deterministic",
+            "context": {
+              "query": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000
+              },
+              "ids": [
+                7
+              ],
+              "turn": "94f312ca65868a54a184e20c"
+            },
+            "records": [],
+            "http": 200,
+            "ids": [
+              7
+            ],
+            "rotated": true,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 6.714170999885027
+        },
+        {
+          "action": "old_reference",
+          "expected": {
+            "http": 409,
+            "record_count": 0
+          },
+          "observed": {
+            "http": 409,
+            "record_count": 0
+          },
+          "actual": {
+            "detail": "Results changed. Search again to select the vehicle.",
+            "http": 409,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 5.69743500000186
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "cancellation-excerpt",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "52dac466af4722864b60267f",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 16.758083000013357
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "cites": "rental_changes",
+            "contains": "Staff may cancel"
+          },
+          "message": "Who can cancel my confirmed rental?",
+          "observed": {
+            "cites": "rental_changes",
+            "contains": "Staff may cancel"
+          },
+          "actual": {
+            "citations": [
+              {
+                "chunk_id": "abd1730fbef91864edeec475",
+                "doc_id": "rental_changes",
+                "version": "5d952f18bc6506bb",
+                "topic": "rental_changes",
+                "text": "Synthetic rental changes require a new extension quote and staff review. The original reservation stays active if the extension conflicts. Staff may cancel a confirmed reservation and release its occupied dates. Escalate refund or identity document questions to staff. To add nights or call off a rental, request staff review. For an extension, request and approve it before midnight Phoenix time at the start of the original return date.",
+                "score": 0.03278688524590164,
+                "dense_score": 0.587480366230011
+              }
+            ],
+            "question": "Who can cancel my confirmed rental?",
+            "operation": "policy",
+            "usage": null,
+            "explanation": null,
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 28.414543999815578
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "unsupported-policy",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "af38b6cfde1052a2589bf1b7",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 9.902271000100882
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "citations": [],
+            "escalates": true
+          },
+          "message": "Would a penguin be entitled to air miles?",
+          "observed": {
+            "citations": [],
+            "escalates": true
+          },
+          "actual": {
+            "citations": [],
+            "question": "Would a penguin be entitled to air miles?",
+            "operation": "policy",
+            "usage": null,
+            "explanation": "The synthetic policies do not establish an answer. Please ask staff.",
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 21.829693000199768
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "budget-period-clarification",
+      "steps": [
+        {
+          "action": "discover",
+          "expected": {
+            "clarifies": true
+          },
+          "message": "SUV under $900 in Tempe",
+          "observed": {
+            "clarifies": true
+          },
+          "actual": {
+            "clarification": "Is your budget daily, weekly or monthly?",
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 4.498787000102311
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "phoenix-evening",
+      "steps": [
+        {
+          "action": "clock",
+          "expected": {},
+          "utc": "2031-04-02T01:00:00+00:00",
+          "observed": {},
+          "actual": {
+            "http": null,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 0.7186340001226199
+        },
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "1670ed5375e09f98b0334076",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 14.350747999969826
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "message": "Could I get a quote on the first vehicle?",
+          "observed": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "actual": {
+            "quote": {
+              "id": "a27c54d9-1cd6-4820-88ce-ea02dd5f0589",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              "expires": 1932858900
+            },
+            "operation": "quote",
+            "usage": null,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "quoted"
+          },
+          "passed": true,
+          "latency_ms": 9.06291199999032
+        },
+        {
+          "action": "submit",
+          "expected": {
+            "status": "pending"
+          },
+          "observed": {
+            "status": "pending"
+          },
+          "actual": {
+            "id": "a27c54d9-1cd6-4820-88ce-ea02dd5f0589",
+            "status": "pending",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932858900,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 10.099738999997498
+        },
+        {
+          "action": "approve",
+          "expected": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "observed": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "actual": {
+            "id": "a27c54d9-1cd6-4820-88ce-ea02dd5f0589",
+            "status": "confirmed",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932858900,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 10.307688000011694
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "extension-cutoff",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "27ab9a2a88c93aa3facc1ba5",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 13.514974999907281
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "message": "Could I get a quote on the first vehicle?",
+          "observed": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "actual": {
+            "quote": {
+              "id": "cb494e2d-2636-4b52-b3fc-d01f680691f7",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              "expires": 1932228900
+            },
+            "operation": "quote",
+            "usage": null,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "quoted"
+          },
+          "passed": true,
+          "latency_ms": 12.657073000127639
+        },
+        {
+          "action": "submit",
+          "expected": {
+            "status": "pending"
+          },
+          "observed": {
+            "status": "pending"
+          },
+          "actual": {
+            "id": "cb494e2d-2636-4b52-b3fc-d01f680691f7",
+            "status": "pending",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 10.583960999838382
+        },
+        {
+          "action": "approve",
+          "expected": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "observed": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "actual": {
+            "id": "cb494e2d-2636-4b52-b3fc-d01f680691f7",
+            "status": "confirmed",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 10.97834300003342
+        },
+        {
+          "action": "extension",
+          "expected": {
+            "quote.status": "quoted"
+          },
+          "end": "2031-04-12",
+          "observed": {
+            "quote.status": "quoted"
+          },
+          "actual": {
+            "quote": {
+              "id": "06c280a9-bc74-46a9-9d34-0780f65ee674",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-12",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 11,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 45100,
+                "extends": "cb494e2d-2636-4b52-b3fc-d01f680691f7"
+              },
+              "expires": 1932228900
+            },
+            "http": 200,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 7.594091000100889
+        },
+        {
+          "action": "submit",
+          "expected": {
+            "status": "pending"
+          },
+          "observed": {
+            "status": "pending"
+          },
+          "actual": {
+            "id": "06c280a9-bc74-46a9-9d34-0780f65ee674",
+            "status": "pending",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-12",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 11,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 45100,
+              "extends": "cb494e2d-2636-4b52-b3fc-d01f680691f7"
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 9.645642000123189
+        },
+        {
+          "action": "clock",
+          "expected": {},
+          "utc": "2031-04-08T07:00:00+00:00",
+          "observed": {},
+          "actual": {
+            "http": null,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 0.6141769999885582
+        },
+        {
+          "action": "approve",
+          "expected": {
+            "http": 409,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "observed": {
+            "http": 409,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "actual": {
+            "detail": "The original return date has arrived. Start a new rental search.",
+            "http": 409,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 6.921355000031326
+        },
+        {
+          "action": "extension",
+          "expected": {
+            "http": 409,
+            "occupied": 7
+          },
+          "end": "2031-04-13",
+          "observed": {
+            "http": 409,
+            "occupied": 7
+          },
+          "actual": {
+            "detail": "The original return date has arrived. Start a new rental search.",
+            "http": 409,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 6.288025000003472
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "competing-approvals",
+      "steps": [
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "6faf723f6ebb4bf1db387569",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null
+          },
+          "passed": true,
+          "latency_ms": 9.85331399988354
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "message": "Could I get a quote on the first vehicle?",
+          "observed": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "actual": {
+            "quote": {
+              "id": "653adb9a-77cf-40ad-95bf-1a8c9623ea1b",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              "expires": 1932228900
+            },
+            "operation": "quote",
+            "usage": null,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "quoted"
+          },
+          "passed": true,
+          "latency_ms": 10.693769999988945
+        },
+        {
+          "action": "submit",
+          "expected": {
+            "status": "pending"
+          },
+          "observed": {
+            "status": "pending"
+          },
+          "actual": {
+            "id": "653adb9a-77cf-40ad-95bf-1a8c9623ea1b",
+            "status": "pending",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 7.081225000092672
+        },
+        {
+          "action": "customer",
+          "expected": {},
+          "observed": {},
+          "actual": {
+            "http": null,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 4.995914000119228
+        },
+        {
+          "action": "search",
+          "expected": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "body": "suv",
+              "min_seats": null,
+              "budget_cents": 95000,
+              "period": "monthly",
+              "location": "Tempe"
+            }
+          },
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          },
+          "observed": {
+            "ids": [
+              6,
+              7
+            ],
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            }
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "c023bea373e8516fe29dd1a8",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 1,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 11.839458999929775
+        },
+        {
+          "action": "ask",
+          "expected": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "message": "Could I get a quote on the first vehicle?",
+          "observed": {
+            "quote.terms.vehicle_id": 6,
+            "quote.status": "quoted",
+            "quote.terms.total_cents": 28700
+          },
+          "actual": {
+            "quote": {
+              "id": "776e377a-0b74-47fd-9238-b866f83e7a77",
+              "status": "quoted",
+              "terms": {
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              "expires": 1932228900
+            },
+            "operation": "quote",
+            "usage": null,
+            "http": 200,
+            "record_count": 2,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 8.281338000188043
+        },
+        {
+          "action": "submit",
+          "expected": {
+            "status": "pending"
+          },
+          "observed": {
+            "status": "pending"
+          },
+          "actual": {
+            "id": "776e377a-0b74-47fd-9238-b866f83e7a77",
+            "status": "pending",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 2,
+            "occupied": 0,
+            "original_status": "pending"
+          },
+          "passed": true,
+          "latency_ms": 6.44473200009088
+        },
+        {
+          "action": "approve_first",
+          "expected": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "observed": {
+            "status": "confirmed",
+            "occupied": 7
+          },
+          "actual": {
+            "id": "653adb9a-77cf-40ad-95bf-1a8c9623ea1b",
+            "status": "confirmed",
+            "terms": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000,
+              "vehicle_id": 6,
+              "currency": "USD",
+              "lines": [
+                {
+                  "unit": "monthly",
+                  "count": 0,
+                  "unit_cents": 87500
+                },
+                {
+                  "unit": "daily",
+                  "count": 7,
+                  "unit_cents": 4100
+                }
+              ],
+              "total_cents": 28700
+            },
+            "expires": 1932228900,
+            "http": 200,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 7.446342999855915
+        },
+        {
+          "action": "approve",
+          "expected": {
+            "http": 409,
+            "occupied": 7
+          },
+          "observed": {
+            "http": 409,
+            "occupied": 7
+          },
+          "actual": {
+            "detail": "Vehicle already reserved on requested dates",
+            "http": 409,
+            "record_count": 2,
+            "occupied": 7,
+            "original_status": "confirmed"
+          },
+          "passed": true,
+          "latency_ms": 6.794454000100814
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "cost_usd": null,
+  "unique_scenarios": 14,
+  "passed_scenarios": 14,
+  "executed_steps": 48,
+  "assistant_turns": 17,
+  "failed_steps": 0,
+  "assistant_p50_ms": 9.560627000155364,
+  "assistant_p95_ms": 23.160788799896178,
+  "provider_usage": [],
+  "model_calls": 0
+}

@@ -1,0 +1,8 @@
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('p[aria-live]').filter({ hasText: 'pickup desk' }) to be visible[22m
+
+    at ask (/workspace/scratch/72f146dc18fa/easy-route-auto/frontend/tests/rental.cjs:16:64)
+    at async /workspace/scratch/72f146dc18fa/easy-route-auto/frontend/tests/rental.cjs:33:5 {
+  name: 'TimeoutError'
+}

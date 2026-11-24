@@ -1,0 +1,61 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4266.04it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/workspace/scratch/72f146dc18fa/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 3386.38it/s]
+/workspace/scratch/72f146dc18fa/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+{
+  "lexical": {
+    "executed": 22,
+    "positive_queries": 20,
+    "negative_queries": 2,
+    "recall_at_3": 0.9,
+    "mrr": 0.8,
+    "ndcg_at_3": 0.8261859507142915,
+    "citation_validity": 1,
+    "expected_phrase_coverage": 0.9,
+    "negative_abstention_accuracy": 1,
+    "p50_ms": 10.459499999999998,
+    "p95_ms": 13.26865
+  },
+  "dense": {
+    "executed": 22,
+    "positive_queries": 20,
+    "negative_queries": 2,
+    "recall_at_3": 0.95,
+    "mrr": 0.8583333333333333,
+    "ndcg_at_3": 0.8815464876785729,
+    "citation_validity": 1,
+    "expected_phrase_coverage": 0.95,
+    "negative_abstention_accuracy": 1,
+    "p50_ms": 10.341,
+    "p95_ms": 12.7601
+  },
+  "hybrid": {
+    "executed": 22,
+    "positive_queries": 20,
+    "negative_queries": 2,
+    "recall_at_3": 0.95,
+    "mrr": 0.8416666666666667,
+    "ndcg_at_3": 0.8696394630357186,
+    "citation_validity": 1,
+    "expected_phrase_coverage": 0.95,
+    "negative_abstention_accuracy": 1,
+    "p50_ms": 9.9865,
+    "p95_ms": 12.52195
+  },
+  "reranked": {
+    "executed": 22,
+    "positive_queries": 20,
+    "negative_queries": 2,
+    "recall_at_3": 1.0,
+    "mrr": 0.9166666666666666,
+    "ndcg_at_3": 0.9380929753571458,
+    "citation_validity": 1,
+    "expected_phrase_coverage": 1,
+    "negative_abstention_accuracy": 1,
+    "p50_ms": 155.9085,
+    "p95_ms": 185.7218
+  }
+}

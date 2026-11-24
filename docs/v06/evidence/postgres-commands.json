@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "/home/user/venv/bin/python",
+      "-m",
+      "alembic",
+      "upgrade",
+      "0001"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/home/user/venv/bin/python",
+      "-m",
+      "alembic",
+      "upgrade",
+      "head"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/home/user/venv/bin/python",
+      "-m",
+      "app.seed"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/home/user/venv/bin/python",
+      "-m",
+      "alembic",
+      "check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/home/user/venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit_code": 0
+  }
+]

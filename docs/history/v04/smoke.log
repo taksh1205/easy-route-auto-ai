@@ -1,0 +1,96 @@
+{
+  "mode": "deterministic",
+  "scope": "8 authored grammar smoke cases, no held-out model evaluation",
+  "cases": [
+    {
+      "query": "SUV under $25,000",
+      "expected": {
+        "max_price": 25000,
+        "body": "suv"
+      },
+      "actual": {
+        "max_price": 25000,
+        "body": "suv"
+      },
+      "pass": true
+    },
+    {
+      "query": "sedan below 20k",
+      "expected": {
+        "max_price": 20000,
+        "body": "sedan"
+      },
+      "actual": {
+        "max_price": 20000,
+        "body": "sedan"
+      },
+      "pass": true
+    },
+    {
+      "query": "truck budget 30000",
+      "expected": {
+        "max_price": 30000,
+        "body": "truck"
+      },
+      "actual": {
+        "max_price": 30000,
+        "body": "truck"
+      },
+      "pass": true
+    },
+    {
+      "query": "hatchback max 22000",
+      "expected": {
+        "max_price": 22000,
+        "body": "hatchback"
+      },
+      "actual": {
+        "max_price": 22000,
+        "body": "hatchback"
+      },
+      "pass": true
+    },
+    {
+      "query": "7 seats",
+      "expected": {
+        "min_seats": 7
+      },
+      "actual": {
+        "min_seats": 7
+      },
+      "pass": true
+    },
+    {
+      "query": "SUV below 18k",
+      "expected": {
+        "max_price": 18000,
+        "body": "suv"
+      },
+      "actual": {
+        "max_price": 18000,
+        "body": "suv"
+      },
+      "pass": true
+    },
+    {
+      "query": "hello",
+      "expected": {},
+      "actual": {},
+      "pass": true
+    },
+    {
+      "query": "budget of $19,000",
+      "expected": {
+        "max_price": 19000
+      },
+      "actual": {
+        "max_price": 19000
+      },
+      "pass": true
+    }
+  ],
+  "exact_match": 1.0,
+  "elapsed_ms": 2.11,
+  "model_calls": 0,
+  "cost_usd": null
+}

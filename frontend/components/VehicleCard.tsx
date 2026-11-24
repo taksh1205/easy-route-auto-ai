@@ -1,0 +1,4 @@
+import type{Vehicle}from'../lib/api';
+export default function VehicleCard({v,selected,onSelect,onSlots,busy}:{v:Vehicle;selected:boolean;onSelect:(id:number,value:boolean)=>void;onSlots:(id:number)=>void;busy:boolean}){
+ return <article className="card"><div className="vehiclemark">{v.body.toUpperCase()} / {String(v.id).padStart(2,'0')}</div><h3>{v.name}</h3><strong>${v.price.toLocaleString()}</strong><p>{v.seats} seats · {v.mileage===null?'Mileage unknown':v.mileage.toLocaleString()+' mi'} · {v.mpg===null?'MPG unknown':v.mpg+' mpg'}</p><p>{v.features.join(' · ')}</p>{v.explanations?.map((s,i)=><p className="hint" key={i}>{s}</p>)}<label><input type="checkbox" checked={selected} onChange={e=>onSelect(v.id,e.target.checked)}/> Compare</label><button disabled={busy} onClick={()=>onSlots(v.id)}>View appointment times</button></article>
+}

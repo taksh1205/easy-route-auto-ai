@@ -1,0 +1,112 @@
+INFO:     Started server process [44]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49840 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45932 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "OPTIONS /sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45932 - "POST /sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:45932 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45932 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45932 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45932 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4132.36it/s]
+/workspace/scratch/72f146dc18fa/verify5/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/bd81d6c9-6322-4fcc-9028-bf285caec898/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/bd81d6c9-6322-4fcc-9028-bf285caec898/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "OPTIONS /inventory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /inventory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "OPTIONS /sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "POST /sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36486 - "OPTIONS /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "OPTIONS /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "OPTIONS /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36484 - "OPTIONS /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/73e0634b-5a89-4a16-bafb-1c7e46c30248/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/73e0634b-5a89-4a16-bafb-1c7e46c30248/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "OPTIONS /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "OPTIONS /rental-staff/bd81d6c9-6322-4fcc-9028-bf285caec898/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "POST /rental-staff/bd81d6c9-6322-4fcc-9028-bf285caec898/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "OPTIONS /rental-staff/73e0634b-5a89-4a16-bafb-1c7e46c30248/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /rental-staff/73e0634b-5a89-4a16-bafb-1c7e46c30248/decision HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:45946 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/bd81d6c9-6322-4fcc-9028-bf285caec898/extension HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/bd81d6c9-6322-4fcc-9028-bf285caec898/extension HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/7a0d8fa3-d285-4489-bd5f-09d3bf23c58b/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals/7a0d8fa3-d285-4489-bd5f-09d3bf23c58b/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "OPTIONS /rental-staff/7a0d8fa3-d285-4489-bd5f-09d3bf23c58b/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "POST /rental-staff/7a0d8fa3-d285-4489-bd5f-09d3bf23c58b/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36478 - "OPTIONS /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "DELETE /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "POST /rental-staff/7a0d8fa3-d285-4489-bd5f-09d3bf23c58b/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45946 - "GET /sessions/1d717c4c-326a-4793-a04e-18ffb2e8aacc/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "POST /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36486 - "GET /sessions/95a8499f-eb54-4e8f-9288-b2a3a2f68acd/rentals HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44]

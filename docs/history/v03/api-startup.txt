@@ -1,0 +1,38 @@
+INFO:     Started server process [290]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "OPTIONS /sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54236 - "POST /sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54236 - "OPTIONS /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "OPTIONS /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54236 - "POST /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54236 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54236 - "OPTIONS /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "POST /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4304.81it/s]
+/workspace/scratch/72f146dc18fa/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+INFO:     127.0.0.1:54230 - "POST /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "OPTIONS /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/reference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "POST /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/reference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "OPTIONS /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/6303011c-6ad5-449d-a32c-47ec5f8b3072/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "POST /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals/6303011c-6ad5-449d-a32c-47ec5f8b3072/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "OPTIONS /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "OPTIONS /rental-staff/6303011c-6ad5-449d-a32c-47ec5f8b3072/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "POST /rental-staff/6303011c-6ad5-449d-a32c-47ec5f8b3072/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /sessions/2fd5992e-8da2-4f69-a788-002d98ab0a27/rentals HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [290]

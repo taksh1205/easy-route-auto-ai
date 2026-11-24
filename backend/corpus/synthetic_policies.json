@@ -1,0 +1,68 @@
+[
+  {
+    "id": "appointments",
+    "topic": "appointments",
+    "format": "md",
+    "text": "SYNTHETIC DEMO POLICY \u2014 not an actual company policy. Appointments are one-hour test-drive slots, available from 9 AM through 4 PM America/Phoenix. Choose a vehicle and an open slot, review the exact booking proposal, and press Confirm. A booking exists only after a committed appointment record ID is returned. Chat statements do not reserve a time. Cancellation frees that vehicle slot. Rescheduling is atomic: if the new slot is occupied, the original appointment remains unchanged. One vehicle can have one active appointment per hour; no overall employee capacity is modeled."
+  },
+  {
+    "id": "test_drives",
+    "topic": "test_drives",
+    "format": "md",
+    "text": "SYNTHETIC DEMO PROCEDURE. For a test drive, bring a valid driving license and ask staff what eligibility documents are needed. Do not upload identity documents to this portfolio app. The app does not verify driving eligibility, insurance, or legal requirements. Staff must complete any real-world checks separately. A test-drive appointment does not reserve a purchase or guarantee a sale."
+  },
+  {
+    "id": "trade_ins",
+    "topic": "trade_ins",
+    "format": "md",
+    "text": "SYNTHETIC DEMO TRADE-IN PROCESS. A trade-in inquiry can be recorded as a lead. A staff member would review vehicle condition, mileage, service records and ownership information before providing a trade-in estimate. The AI cannot issue a binding valuation or promise acceptance. The demonstration does not connect to appraisal services. Do not supply vehicle title images or account details in chat."
+  },
+  {
+    "id": "financing",
+    "topic": "financing",
+    "format": "md",
+    "text": "SYNTHETIC DEMO FINANCING PROCESS INFORMATION. Customers may ask staff for information about a financing application process. This portfolio assistant does not approve loans, obtain credit reports, calculate binding offers or guarantee interest rates. Financing decisions would belong to an authorized lender. Never submit social security numbers, bank details or credit applications to this demo. Ask an appropriate professional for individual financial advice."
+  },
+  {
+    "id": "warranties",
+    "topic": "warranties",
+    "format": "md",
+    "text": "SYNTHETIC DEMO WARRANTY PROCEDURE. No warranty coverage is promised by this assistant. Ask staff to review the written terms for the specific vehicle and any separately offered coverage. Warranty duration, exclusions and eligibility must be checked in the actual written agreement. This synthetic corpus cannot establish that a real vehicle has a warranty. The AI must abstain from inventing coverage."
+  },
+  {
+    "id": "privacy",
+    "topic": "procedures",
+    "format": "md",
+    "text": "SYNTHETIC DEMO DATA PROCEDURE. Deleting chat removes message history, preference data, proposals and personal lead contact details. It does not cancel appointments. Minimal operational appointment records and their session ownership remain so the customer can view or cancel a booking using the session token. Expiry purges chat data without deleting active bookings. Session tokens must be protected. Staff access is local-demo shared-token access, not individual authentication."
+  },
+  {
+    "id": "inventory",
+    "topic": "procedures",
+    "format": "md",
+    "text": "SYNTHETIC INVENTORY PROCEDURE. Vehicle prices, mileage, fuel economy, seats and availability come from current SQL inventory records. Policy search does not establish live prices or availability. All demonstration vehicle records are fictional examples, not real listings. A vehicle purchase is not performed in this application. An impossible set of required constraints returns no exact match rather than secretly increasing a budget."
+  },
+  {
+    "id": "rental_pickup",
+    "topic": "rental_pickup",
+    "format": "txt",
+    "text": "Synthetic Tempe pickup procedure. After staff approval, coordinate a meeting time at the fictional Tempe pickup desk. A pending inquiry cannot authorize pickup. Ask staff about airport transfers or special assistance. Staff arrange collection of the keys at the desk."
+  },
+  {
+    "id": "rental_terms",
+    "topic": "rental_terms",
+    "format": "txt",
+    "text": "Synthetic rental quotes include vehicle use only. No tax, deposit or insurance payment is collected in this demo. Each complete calendar month is billed from the original start day to its monthly anniversary. Remaining days use the listed daily rate. Quotes expire in fifteen minutes. Submission locks the quoted amount for staff review. For partial months, extra nights after the full billing month are charged individually."
+  },
+  {
+    "id": "rental_changes",
+    "topic": "rental_changes",
+    "format": "txt",
+    "text": "Synthetic rental changes require a new extension quote and staff review. The original reservation stays active if the extension conflicts. Staff may cancel a confirmed reservation and release its occupied dates. Escalate refund or identity document questions to staff. To add nights or call off a rental, request staff review. For an extension, request and approve it before midnight Phoenix time at the start of the original return date."
+  },
+  {
+    "id": "rental_documents",
+    "topic": "rental_documents",
+    "format": "txt",
+    "text": "Synthetic rental document procedure. Ask staff which documents to bring before collecting the vehicle. Do not upload identity documents or payment details to chat. Staff handle eligibility and document questions."
+  }
+]

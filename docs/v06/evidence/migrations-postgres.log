@@ -1,0 +1,2 @@
+PASS: PostgreSQL upgrade, seed preservation, schema check and isolated backend tests
+exit=0

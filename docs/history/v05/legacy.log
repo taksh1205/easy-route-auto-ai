@@ -1,0 +1,13 @@
+{
+  "dataset_hash": "03347ae25818707938f60012f2bdc3777985e46e7c77f7ed64d5ac13ac320d2e",
+  "mode": "deterministic_and_real_local_sql",
+  "unique_scenarios": 17,
+  "executed_examples": 17,
+  "passed": 17,
+  "failed": 0,
+  "skipped": 0,
+  "llm_calls": 0,
+  "cost_usd": null,
+  "p50_ms": 0.072,
+  "p95_ms": 32.76759999999993
+}

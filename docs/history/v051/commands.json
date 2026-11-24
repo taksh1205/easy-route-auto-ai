@@ -1,0 +1,110 @@
+[
+  {
+    "check": "postgres",
+    "command": "python scripts/verify_postgres.py",
+    "exit": 0,
+    "log": "postgres.log"
+  },
+  {
+    "check": "upgrade",
+    "command": "python scripts/verify_sqlite_upgrade.py",
+    "exit": 0,
+    "log": "upgrade.log"
+  },
+  {
+    "check": "frontend",
+    "command": "cd frontend && npm ci --no-audit && npm run build && npm run typecheck",
+    "exit": 0,
+    "log": "frontend.log"
+  },
+  {
+    "check": "compose",
+    "command": "python scripts/verify_compose.py",
+    "exit": 1,
+    "log": "compose.log"
+  },
+  {
+    "check": "live",
+    "command": "cd backend && python rental_eval.py --live --dataset evaluation/holdout_v051.json --out ../docs/v051/live.json",
+    "exit": 0,
+    "log": "live.log"
+  },
+  {
+    "check": "legacy",
+    "command": "cd backend && python evaluate.py tasks --output ../docs/v051",
+    "exit": 0,
+    "log": "legacy.log"
+  },
+  {
+    "check": "secrets",
+    "command": "python scripts/scan_secrets.py",
+    "exit": 0,
+    "log": "secrets.log"
+  },
+  {
+    "check": "sqlite",
+    "command": "cd backend && EASY_RUN_NEURAL=1 python -m pytest -q --junitxml=../docs/v051/sqlite.xml",
+    "exit": 0,
+    "log": "sqlite.log"
+  },
+  {
+    "check": "retrieval",
+    "command": "cd backend && python evaluate.py retrieval --rerank --output ../docs/v051",
+    "exit": 0,
+    "log": "retrieval.log"
+  },
+  {
+    "check": "heldout",
+    "command": "cd backend && python rental_eval.py --dataset evaluation/holdout_v051.json --out ../docs/v051/heldout.json",
+    "exit": 0,
+    "log": "heldout.log"
+  },
+  {
+    "check": "rental",
+    "command": "cd backend && python rental_eval.py --out ../docs/v051/rental.json",
+    "exit": 0,
+    "log": "rental.log"
+  },
+  {
+    "check": "compare",
+    "command": "cd backend && python rental_eval.py --dataset evaluation/rental_comparison_v5.json --out ../docs/v051/comparison.json",
+    "exit": 0,
+    "log": "compare.log"
+  },
+  {
+    "check": "browser",
+    "command": "REQUEST_LIMIT_PER_MINUTE=300 CHROMIUM_PATH=$HOME/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell python scripts/rental_browser.py",
+    "exit": 0,
+    "log": "browser.log"
+  },
+  {
+    "check": "fault",
+    "command": "cd backend && python rental_eval.py --provider-fault --dataset evaluation/rental_fault_v5.json --out ../docs/v051/fault.json",
+    "exit": 0,
+    "log": "fault.log"
+  },
+  {
+    "check": "python_audit",
+    "command": "pip-audit --disable-pip --no-deps -r backend/requirements.lock -f json -o docs/v051/python-audit.json",
+    "exit": 0,
+    "log": "python_audit.log"
+  },
+  {
+    "check": "audit",
+    "command": "cd frontend && npm audit --omit=dev --json >../docs/v051/npm-audit.json",
+    "exit": 0,
+    "log": "audit.log"
+  },
+  {
+    "check": "legacy_browser",
+    "command": "EASY_EVIDENCE_DIR=$PWD/docs/v051/legacy-browser REQUEST_LIMIT_PER_MINUTE=300 CHROMIUM_PATH=$HOME/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell python scripts/browser_e2e.py",
+    "exit": 0,
+    "log": "legacy_browser.log"
+  },
+  {
+    "check": "smoke",
+    "command": "cd backend && python benchmark.py",
+    "exit": 0,
+    "log": "smoke.log"
+  }
+]

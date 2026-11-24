@@ -1,0 +1,274 @@
+{
+  "dataset_hash": "03347ae25818707938f60012f2bdc3777985e46e7c77f7ed64d5ac13ac320d2e",
+  "mode": "deterministic_and_real_local_sql",
+  "unique_scenarios": 17,
+  "executed_examples": 17,
+  "passed": 17,
+  "failed": 0,
+  "skipped": 0,
+  "llm_calls": 0,
+  "cost_usd": null,
+  "p50_ms": 0.073,
+  "p95_ms": 16.89099999999998,
+  "cases": [
+    {
+      "id": "p01",
+      "kind": "preferences",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": null,
+          "body": "sedan",
+          "min_seats": 1,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": false,
+          "fuel_efficient": false,
+          "semantic_query": ""
+        },
+        "intent": "inventory"
+      },
+      "latency_ms": 0.801
+    },
+    {
+      "id": "p02",
+      "kind": "preferences",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": null,
+          "body": null,
+          "min_seats": 5,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": false,
+          "fuel_efficient": false,
+          "semantic_query": ""
+        },
+        "intent": "inventory"
+      },
+      "latency_ms": 0.033
+    },
+    {
+      "id": "p03",
+      "kind": "preferences",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": 20500,
+          "body": "sedan",
+          "min_seats": 1,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": false,
+          "fuel_efficient": false,
+          "semantic_query": ""
+        },
+        "intent": "inventory"
+      },
+      "latency_ms": 0.073
+    },
+    {
+      "id": "p04",
+      "kind": "preferences",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": null,
+          "body": null,
+          "min_seats": 1,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": true,
+          "fuel_efficient": true,
+          "semantic_query": ""
+        },
+        "intent": "inventory"
+      },
+      "latency_ms": 0.031
+    },
+    {
+      "id": "p05",
+      "kind": "clarify",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": null,
+          "body": null,
+          "min_seats": 1,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": false,
+          "fuel_efficient": false,
+          "semantic_query": ""
+        },
+        "intent": "clarify"
+      },
+      "latency_ms": 0.014
+    },
+    {
+      "id": "p06",
+      "kind": "clarify",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "max_price": null,
+          "body": null,
+          "min_seats": 1,
+          "max_mileage": null,
+          "min_mpg": null,
+          "features": [],
+          "low_mileage": false,
+          "fuel_efficient": false,
+          "semantic_query": ""
+        },
+        "intent": "clarify"
+      },
+      "latency_ms": 0.012
+    },
+    {
+      "id": "t01",
+      "kind": "tool",
+      "pass": true,
+      "detail": {
+        "intent": "policy",
+        "tools": [
+          {
+            "name": "retrieve_policy",
+            "arguments": {
+              "query": "What is the warranty policy?"
+            }
+          }
+        ]
+      },
+      "latency_ms": 0.022
+    },
+    {
+      "id": "t02",
+      "kind": "tool",
+      "pass": true,
+      "detail": {
+        "intent": "policy",
+        "tools": [
+          {
+            "name": "retrieve_policy",
+            "arguments": {
+              "query": "What documents should I bring for a test drive?"
+            }
+          }
+        ]
+      },
+      "latency_ms": 0.012
+    },
+    {
+      "id": "t03",
+      "kind": "unsupported_confirmation",
+      "pass": true,
+      "detail": {
+        "intent": "clarify",
+        "tools": []
+      },
+      "latency_ms": 0.007
+    },
+    {
+      "id": "t04",
+      "kind": "injection",
+      "pass": true,
+      "detail": {
+        "intent": "clarify",
+        "tools": []
+      },
+      "latency_ms": 0.01
+    },
+    {
+      "id": "q01",
+      "kind": "ranking",
+      "pass": true,
+      "detail": {
+        "ranked_ids": [
+          10,
+          1,
+          9
+        ],
+        "hard_constraint_satisfaction": true
+      },
+      "latency_ms": 1.083
+    },
+    {
+      "id": "q02",
+      "kind": "ranking",
+      "pass": true,
+      "detail": {
+        "ranked_ids": [
+          9,
+          1,
+          10
+        ],
+        "hard_constraint_satisfaction": true
+      },
+      "latency_ms": 0.387
+    },
+    {
+      "id": "q03",
+      "kind": "ranking",
+      "pass": true,
+      "detail": {
+        "ranked_ids": [
+          12,
+          6,
+          7
+        ],
+        "hard_constraint_satisfaction": true
+      },
+      "latency_ms": 0.75
+    },
+    {
+      "id": "q04",
+      "kind": "ranking",
+      "pass": true,
+      "detail": {
+        "ranked_ids": [],
+        "hard_constraint_satisfaction": true
+      },
+      "latency_ms": 0.32
+    },
+    {
+      "id": "q05",
+      "kind": "ranking",
+      "pass": true,
+      "detail": {
+        "ranked_ids": [
+          7,
+          2,
+          5
+        ],
+        "hard_constraint_satisfaction": true
+      },
+      "latency_ms": 0.772
+    },
+    {
+      "id": "e01",
+      "kind": "workflow",
+      "pass": true,
+      "detail": {
+        "record_id": "5695ca1f-a36e-481f-a110-c8092c718073",
+        "cancel_status": 204
+      },
+      "latency_ms": 40.883
+    },
+    {
+      "id": "e02",
+      "kind": "grounding",
+      "pass": true,
+      "detail": {
+        "actions": []
+      },
+      "latency_ms": 10.893
+    }
+  ]
+}

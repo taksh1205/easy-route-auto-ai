@@ -1,0 +1,44 @@
+[
+  {
+    "id": "provider-503",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "stale_ask",
+        "message": "Quote the first car",
+        "expected": {
+          "http": 409,
+          "record_count": 0,
+          "provider_attempts": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Please quote the first car",
+        "expected": {
+          "http": 502,
+          "record_count": 0,
+          "selected": null,
+          "provider_attempts": 1
+        }
+      }
+    ]
+  }
+]

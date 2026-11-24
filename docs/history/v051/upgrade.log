@@ -1,0 +1,1 @@
+PASS: SQLite 0001→head migration, existing-booking retention, seed, schema check and RESTRICT

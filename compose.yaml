@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: easy
+      POSTGRES_DB: easy
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U easy -d easy"]
+      interval: 3s
+      retries: 20
+  migrate:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://easy:${POSTGRES_PASSWORD}@db:5432/easy
+    command: sh -c 'alembic upgrade head && python -m app.seed'
+    depends_on:
+      db: {condition: service_healthy}
+  index:
+    build: ./backend
+    environment:
+      RAG_PATH: /data/rag
+      HF_HUB_DISABLE_XET: '1'
+    volumes: ['ragdata:/data/rag', 'modelcache:/home/app/.cache']
+    command: python -m app.ingest
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://easy:${POSTGRES_PASSWORD}@db:5432/easy
+      STAFF_TOKEN: ${STAFF_TOKEN:?Set STAFF_TOKEN}
+      RAG_PATH: /data/rag
+      AI_MODE: ${AI_MODE:-deterministic}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+    volumes: ['ragdata:/data/rag', 'modelcache:/home/app/.cache']
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      index: {condition: service_completed_successfully}
+  web:
+    build: ./frontend
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [api]
+volumes:
+  pgdata:
+  ragdata:
+  modelcache:

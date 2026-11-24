@@ -1,0 +1,79 @@
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory /tmp/easy_pg_bmynksmq/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/16/bin/pg_ctl -D /tmp/easy_pg_bmynksmq/data -l logfile start
+
+2026-11-24 05:21:53.645 UTC [9087] LOG:  starting PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-11-24 05:21:53.645 UTC [9087] LOG:  listening on IPv4 address "127.0.0.1", port 54453
+2026-11-24 05:21:53.647 UTC [9090] LOG:  database system was shut down at 2026-11-24 05:21:53 UTC
+2026-11-24 05:21:53.650 UTC [9087] LOG:  database system is ready to accept connections
+('PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit',)
+
+COMMAND: /home/user/venv/bin/python -m alembic upgrade 0001
+
+COMMAND: /home/user/venv/bin/python -m alembic upgrade head
+
+COMMAND: /home/user/venv/bin/python -m app.seed
+PASS: v0.1 upgrade preserves existing SQL price/availability and adds attributes
+
+COMMAND: /home/user/venv/bin/python -m alembic check
+No new upgrade operations detected.
+
+COMMAND: /home/user/venv/bin/python -m pytest -q
+.............................................ssss2026-11-24 05:22:01.720 UTC [9110] ERROR:  duplicate key value violates unique constraint "rental_days_pkey"
+2026-11-24 05:22:01.720 UTC [9110] DETAIL:  Key (vehicle_id, day)=(7, 2031-04-01) already exists.
+2026-11-24 05:22:01.720 UTC [9110] STATEMENT:  INSERT INTO rental_days (vehicle_id, day, reservation) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR)
+.2026-11-24 05:22:01.917 UTC [9110] ERROR:  duplicate key value violates unique constraint "rental_days_pkey"
+2026-11-24 05:22:01.917 UTC [9110] DETAIL:  Key (vehicle_id, day)=(7, 2031-03-01) already exists.
+2026-11-24 05:22:01.917 UTC [9110] STATEMENT:  INSERT INTO rental_days (vehicle_id, day, reservation) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR)
+......s............... [ 49%]
+.............................................................2026-11-24 05:22:13.093 UTC [9183] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-24 05:22:13.093 UTC [9183] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-24 05:22:13.093 UTC [9183] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.2026-11-24 05:22:13.187 UTC [9183] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-24 05:22:13.187 UTC [9183] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-24 05:22:13.187 UTC [9183] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.2026-11-24 05:22:13.283 UTC [9110] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-24 05:22:13.283 UTC [9110] DETAIL:  Key (vehicle_id, slot)=(1, 1906563600) already exists.
+2026-11-24 05:22:13.283 UTC [9110] STATEMENT:  UPDATE appointments SET slot=$1::INTEGER WHERE appointments.id = $2::VARCHAR
+.......2026-11-24 05:22:13.911 UTC [9183] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-24 05:22:13.911 UTC [9183] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-24 05:22:13.911 UTC [9183] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.. [ 99%]
+2026-11-24 05:22:14.057 UTC [9183] ERROR:  update or delete on table "conversations" violates foreign key constraint "fk_appointments_conversation" on table "appointments"
+2026-11-24 05:22:14.057 UTC [9183] DETAIL:  Key (id)=(1bf50379-be94-4b6b-a32c-b9f411426784) is still referenced from table "appointments".
+2026-11-24 05:22:14.057 UTC [9183] STATEMENT:  DELETE FROM conversations WHERE conversations.id = $1::VARCHAR
+.                                                                        [100%]2026-11-24 05:22:14.068 UTC [9088] LOG:  checkpoint starting: immediate force wait
+2026-11-24 05:22:14.081 UTC [9088] LOG:  checkpoint complete: wrote 109 buffers (0.7%); 0 WAL file(s) added, 0 removed, 3 recycled; write=0.002 s, sync=0.009 s, total=0.013 s; sync files=102, longest=0.002 s, average=0.001 s; distance=49484 kB, estimate=49484 kB; lsn=0/4542490, redo lsn=0/4542458
+
+=============================== warnings summary ===============================
+../../../venv/lib/python3.13/site-packages/_pytest/cacheprovider.py:487
+  /home/user/venv/lib/python3.13/site-packages/_pytest/cacheprovider.py:487: PytestCacheWarning: cache could not write path /home/user/src/easy-route-auto/backend/.pytest_cache/v/cache/nodeids: [Errno 13] Permission denied: '/home/user/src/easy-route-auto/backend/.pytest_cache/v/cache/nodeids'
+    config.cache.set("cache/nodeids", sorted(str(n) for n in self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+140 passed, 5 skipped, 1 warning in 17.51s
+2026-11-24 05:22:14.557 UTC [9087] LOG:  received smart shutdown request
+2026-11-24 05:22:14.559 UTC [9087] LOG:  background worker "logical replication launcher" (PID 9093) exited with exit code 1
+2026-11-24 05:22:14.560 UTC [9088] LOG:  shutting down
+2026-11-24 05:22:14.561 UTC [9088] LOG:  checkpoint starting: shutdown immediate
+2026-11-24 05:22:14.563 UTC [9088] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=44535 kB; lsn=0/4542598, redo lsn=0/4542598
+2026-11-24 05:22:14.569 UTC [9087] LOG:  database system is shut down

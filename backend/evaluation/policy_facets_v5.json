@@ -1,0 +1,84 @@
+[
+  {
+    "id": "f1",
+    "query": "Can I collect the keys at 03:15?",
+    "relevant": [
+      "rental_pickup"
+    ],
+    "accepted": [],
+    "needs_staff": true
+  },
+  {
+    "id": "f2",
+    "query": "Where do we meet for pickup, and can I come after midnight?",
+    "relevant": [
+      "rental_pickup"
+    ],
+    "accepted": [
+      "rental_pickup"
+    ],
+    "needs_staff": true
+  },
+  {
+    "id": "f3",
+    "query": "Is my roommate allowed to collect my keys?",
+    "relevant": [
+      "rental_pickup"
+    ],
+    "accepted": [],
+    "needs_staff": true
+  },
+  {
+    "id": "f4",
+    "query": "How do I request an extension, and is there a rush fee?",
+    "relevant": [
+      "rental_changes"
+    ],
+    "accepted": [
+      "rental_changes"
+    ],
+    "needs_staff": true
+  },
+  {
+    "id": "f5",
+    "query": "Can I get the daily rate waived on my last two days?",
+    "relevant": [
+      "rental_terms"
+    ],
+    "accepted": [],
+    "needs_staff": true
+  },
+  {
+    "id": "f6",
+    "query": "How long does a quote last?",
+    "relevant": [
+      "rental_terms"
+    ],
+    "accepted": [
+      "rental_terms"
+    ],
+    "needs_staff": false
+  },
+  {
+    "id": "f7",
+    "query": "What if extra nights conflict with someone else's booking?",
+    "relevant": [
+      "rental_changes"
+    ],
+    "accepted": [
+      "rental_changes"
+    ],
+    "needs_staff": false
+  },
+  {
+    "id": "f8",
+    "query": "Can I send my driver's license in this chat?",
+    "relevant": [
+      "rental_documents"
+    ],
+    "accepted": [
+      "rental_documents"
+    ],
+    "needs_staff": false
+  }
+]

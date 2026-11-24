@@ -1,0 +1,378 @@
+[
+  {
+    "id": "unchanged-ceiling",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "location": "Tempe",
+          "budget_cents": 95000,
+          "period": "monthly"
+        },
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Keep the same cap and require 7 seats",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 7,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [],
+          "record_count": 0,
+          "ids": []
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Raise my budget to $1,200 monthly",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 7,
+            "location": "Tempe",
+            "budget_cents": 120000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            5
+          ],
+          "record_count": 0,
+          "ids": [
+            5
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "exclusive-seat-limit",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "location": "Tempe",
+          "budget_cents": 95000,
+          "period": "monthly"
+        },
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Under seven seats",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "clarifies": true
+        }
+      },
+      {
+        "action": "ask",
+        "message": "At least five seats",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 5,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "ids": [
+            6,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "inclusive-seat-limit",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "location": "Tempe",
+          "budget_cents": 95000,
+          "period": "monthly"
+        },
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Maximum of five seats",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "clarifies": true
+        }
+      },
+      {
+        "action": "ask",
+        "message": "At least six seats",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 6,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [],
+          "record_count": 0,
+          "ids": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "expiry-subject",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "location": "Tempe",
+          "budget_cents": 95000,
+          "period": "monthly"
+        },
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "When does my quote expire?",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "cites": "rental_terms",
+          "contains": "Quotes expire in fifteen minutes"
+        }
+      },
+      {
+        "action": "ask",
+        "message": "When does my reservation expire?",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "escalates": true,
+          "evidence_docs": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "extension-conflict",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "location": "Tempe",
+          "budget_cents": 95000,
+          "period": "monthly"
+        },
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      },
+      {
+        "action": "ask",
+        "message": "What happens if my extension overlaps someone else's booking?",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "cites": "rental_changes",
+          "contains": "original reservation stays active"
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Don't quote the first car",
+        "expected": {
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "location": "Tempe",
+            "budget_cents": 95000,
+            "period": "monthly"
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0,
+          "clarifies": true
+        }
+      }
+    ]
+  }
+]

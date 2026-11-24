@@ -1,0 +1,341 @@
+[
+  {
+    "name": "lint",
+    "command": [
+      "python",
+      "-m",
+      "ruff",
+      "check",
+      "backend",
+      "scripts"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.0,
+    "log": "lint.log"
+  },
+  {
+    "name": "format",
+    "command": [
+      "python",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "backend",
+      "scripts"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.0,
+    "log": "format.log"
+  },
+  {
+    "name": "backend-neural",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/home/user/src/easy-route-auto/docs/v06/evidence/backend-neural.xml"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 27.9,
+    "log": "backend-neural.log"
+  },
+  {
+    "name": "backend-postgres",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/home/user/src/easy-route-auto/docs/v06/evidence/backend-postgres.xml"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 18.2,
+    "log": "backend-postgres.log"
+  },
+  {
+    "name": "migrations-sqlite",
+    "command": [
+      "python",
+      "scripts/verify_sqlite_upgrade.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 2.1,
+    "log": "migrations-sqlite.log"
+  },
+  {
+    "name": "migrations-postgres",
+    "command": [
+      "python",
+      "scripts/verify_postgres.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "reason": "run as non-root user postgres (initdb refuses root)",
+    "exit_code": 0,
+    "log": "migrations-postgres.log"
+  },
+  {
+    "name": "eval-legacy-tasks",
+    "command": [
+      "python",
+      "evaluate.py",
+      "tasks",
+      "--output",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.7,
+    "log": "eval-legacy-tasks.log"
+  },
+  {
+    "name": "eval-rental-holdout",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--dataset",
+      "evaluation/rentals_holdout.json",
+      "--out",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations/eval-rental-holdout.json"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 5.7,
+    "log": "eval-rental-holdout.log"
+  },
+  {
+    "name": "eval-comparison-v5",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--dataset",
+      "evaluation/rental_comparison_v5.json",
+      "--out",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations/eval-comparison-v5.json"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 5.9,
+    "log": "eval-comparison-v5.log"
+  },
+  {
+    "name": "eval-heldout-v051",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--dataset",
+      "evaluation/holdout_v051.json",
+      "--out",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations/eval-heldout-v051.json"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 5.9,
+    "log": "eval-heldout-v051.log"
+  },
+  {
+    "name": "eval-release-v06",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--dataset",
+      "evaluation/release_v06.json",
+      "--out",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations/eval-release-v06.json",
+      "--gate",
+      "safety"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 6.5,
+    "log": "eval-release-v06.log"
+  },
+  {
+    "name": "eval-provider-fault",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--provider-fault",
+      "--dataset",
+      "evaluation/rental_fault_v5.json",
+      "--out",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations/eval-provider-fault.json"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.9,
+    "log": "eval-provider-fault.log"
+  },
+  {
+    "name": "eval-release-v06-live",
+    "command": [
+      "python",
+      "rental_eval.py",
+      "--live",
+      "--provider",
+      "openai",
+      "--gate",
+      "safety",
+      "--dataset",
+      "evaluation/release_v06.json",
+      "--out",
+      "\u2026/eval-release-v06-live.json"
+    ],
+    "cwd": "backend",
+    "reason": "gpt-5.4-mini-2026-03-17; run once on the frozen set (safety gate)",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.1,
+    "log": "eval-release-v06-live.log"
+  },
+  {
+    "name": "eval-retrieval-4way",
+    "command": [
+      "python",
+      "evaluate.py",
+      "retrieval",
+      "--rerank",
+      "--output",
+      "/home/user/src/easy-route-auto/docs/v06/evaluations"
+    ],
+    "cwd": "backend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 10.3,
+    "log": "eval-retrieval-4way.log"
+  },
+  {
+    "name": "frontend-typecheck",
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "cwd": "frontend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.9,
+    "log": "frontend-typecheck.log"
+  },
+  {
+    "name": "frontend-build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "cwd": "frontend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 10.7,
+    "log": "frontend-build.log"
+  },
+  {
+    "name": "browser-rental",
+    "command": [
+      "python",
+      "scripts/rental_browser.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 44.2,
+    "log": "browser-rental.log"
+  },
+  {
+    "name": "browser-legacy",
+    "command": [
+      "python",
+      "scripts/browser_e2e.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 42.0,
+    "log": "browser-legacy.log"
+  },
+  {
+    "name": "browser-flagship",
+    "command": [
+      "python",
+      "scripts/flagship_browser.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 37.2,
+    "log": "browser-flagship.log"
+  },
+  {
+    "name": "secret-scan",
+    "command": [
+      "python",
+      "scripts/scan_secrets.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.4,
+    "log": "secret-scan.log"
+  },
+  {
+    "name": "audit-npm",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev"
+    ],
+    "cwd": "frontend",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 0.4,
+    "log": "audit-npm.log"
+  },
+  {
+    "name": "audit-python",
+    "command": [
+      "python",
+      "-m",
+      "pip_audit",
+      "--disable-pip",
+      "--no-deps",
+      "-r",
+      "backend/requirements.lock"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 2.0,
+    "log": "audit-python.log"
+  },
+  {
+    "name": "compose-persistence",
+    "command": [
+      "python",
+      "scripts/verify_compose.py"
+    ],
+    "cwd": ".",
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 114.5,
+    "log": "compose-persistence.log"
+  }
+]

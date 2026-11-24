@@ -1,0 +1,5 @@
+{
+  "name": "release_v06",
+  "frozen": "2026-11-24",
+  "note": "Authored and frozen before any live-model run or tuning against it. Expectations derive from synthetic SQL rates and documented policy, not from system output."
+}

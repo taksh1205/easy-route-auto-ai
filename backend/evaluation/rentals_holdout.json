@@ -1,0 +1,703 @@
+[
+  {
+    "id": "independent-field-edits",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            9
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "sedan",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "sedan",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "message": "Keep the same budget but switch to an SUV"
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-05-01",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "message": "Make it one calendar month instead"
+      }
+    ]
+  },
+  {
+    "id": "replace-budget",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "ids": [],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 80000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "message": "Lower the cap to $800 per month"
+      }
+    ]
+  },
+  {
+    "id": "seven-seat-no-match",
+    "steps": [
+      {
+        "action": "discover",
+        "expected": {
+          "ids": [],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 7,
+            "budget_cents": 94999,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "message": "Find a seven-seat SUV in Tempe from 2031-04-01 through 2031-04-08 under $950 monthly"
+      }
+    ]
+  },
+  {
+    "id": "seven-seat-qualifier",
+    "steps": [
+      {
+        "action": "discover",
+        "expected": {
+          "ids": [
+            5
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": 7,
+            "budget_cents": 109999,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "message": "Tempe SUV with 7 seats 2031-04-01 to 2031-04-08 under $1100 per month"
+      }
+    ]
+  },
+  {
+    "id": "out-of-range",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "http": 409,
+          "record_count": 0
+        },
+        "message": "Quote the third vehicle"
+      }
+    ]
+  },
+  {
+    "id": "unselected",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "clarifies": true,
+          "record_count": 0
+        },
+        "message": "Quote that vehicle"
+      }
+    ]
+  },
+  {
+    "id": "reordered-selection",
+    "steps": [
+      {
+        "action": "rate",
+        "expected": {},
+        "vehicle": 7,
+        "monthly": 85000
+      },
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            7,
+            6
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "selection.id": 7
+        },
+        "message": "Select the first one"
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "quote.terms.vehicle_id": 7,
+          "record_count": 1
+        },
+        "message": "Quote that vehicle"
+      }
+    ]
+  },
+  {
+    "id": "stale-display",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "disable",
+        "expected": {},
+        "vehicle": 6
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "http": 409,
+          "record_count": 0
+        },
+        "message": "Quote the first vehicle"
+      },
+      {
+        "action": "restore",
+        "expected": {
+          "ids": [
+            7
+          ],
+          "rotated": true
+        }
+      },
+      {
+        "action": "old_reference",
+        "expected": {
+          "http": 409,
+          "record_count": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "cancellation-excerpt",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "cites": "rental_changes",
+          "contains": "Staff may cancel"
+        },
+        "message": "Who can cancel my confirmed rental?"
+      }
+    ]
+  },
+  {
+    "id": "unsupported-policy",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "citations": [],
+          "escalates": true
+        },
+        "message": "Would a penguin be entitled to air miles?"
+      }
+    ]
+  },
+  {
+    "id": "budget-period-clarification",
+    "steps": [
+      {
+        "action": "discover",
+        "expected": {
+          "clarifies": true
+        },
+        "message": "SUV under $900 in Tempe"
+      }
+    ]
+  },
+  {
+    "id": "phoenix-evening",
+    "steps": [
+      {
+        "action": "clock",
+        "expected": {},
+        "utc": "2031-04-02T01:00:00+00:00"
+      },
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "quote.terms.vehicle_id": 6,
+          "quote.status": "quoted",
+          "quote.terms.total_cents": 28700
+        },
+        "message": "Could I get a quote on the first vehicle?"
+      },
+      {
+        "action": "submit",
+        "expected": {
+          "status": "pending"
+        }
+      },
+      {
+        "action": "approve",
+        "expected": {
+          "status": "confirmed",
+          "occupied": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": "extension-cutoff",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "quote.terms.vehicle_id": 6,
+          "quote.status": "quoted",
+          "quote.terms.total_cents": 28700
+        },
+        "message": "Could I get a quote on the first vehicle?"
+      },
+      {
+        "action": "submit",
+        "expected": {
+          "status": "pending"
+        }
+      },
+      {
+        "action": "approve",
+        "expected": {
+          "status": "confirmed",
+          "occupied": 7
+        }
+      },
+      {
+        "action": "extension",
+        "expected": {
+          "quote.status": "quoted"
+        },
+        "end": "2031-04-12"
+      },
+      {
+        "action": "submit",
+        "expected": {
+          "status": "pending"
+        }
+      },
+      {
+        "action": "clock",
+        "expected": {},
+        "utc": "2031-04-08T07:00:00+00:00"
+      },
+      {
+        "action": "approve",
+        "expected": {
+          "http": 409,
+          "occupied": 7,
+          "original_status": "confirmed"
+        }
+      },
+      {
+        "action": "extension",
+        "expected": {
+          "http": 409,
+          "occupied": 7
+        },
+        "end": "2031-04-13"
+      }
+    ]
+  },
+  {
+    "id": "competing-approvals",
+    "steps": [
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "quote.terms.vehicle_id": 6,
+          "quote.status": "quoted",
+          "quote.terms.total_cents": 28700
+        },
+        "message": "Could I get a quote on the first vehicle?"
+      },
+      {
+        "action": "submit",
+        "expected": {
+          "status": "pending"
+        }
+      },
+      {
+        "action": "customer",
+        "expected": {}
+      },
+      {
+        "action": "search",
+        "expected": {
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "body": "suv",
+            "min_seats": null,
+            "budget_cents": 95000,
+            "period": "monthly",
+            "location": "Tempe"
+          }
+        },
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "body": "suv",
+          "min_seats": null,
+          "budget_cents": 95000,
+          "period": "monthly",
+          "location": "Tempe"
+        }
+      },
+      {
+        "action": "ask",
+        "expected": {
+          "quote.terms.vehicle_id": 6,
+          "quote.status": "quoted",
+          "quote.terms.total_cents": 28700
+        },
+        "message": "Could I get a quote on the first vehicle?"
+      },
+      {
+        "action": "submit",
+        "expected": {
+          "status": "pending"
+        }
+      },
+      {
+        "action": "approve_first",
+        "expected": {
+          "status": "confirmed",
+          "occupied": 7
+        }
+      },
+      {
+        "action": "approve",
+        "expected": {
+          "http": 409,
+          "occupied": 7
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3909.09it/s]
+/workspace/scratch/72f146dc18fa/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+/workspace/scratch/72f146dc18fa/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}
+{'mode': 'deterministic', 'model': None, 'dataset_sha256': 'bd193dc51aed58eae6f503eb05ff18e3d41ece3b099eac50d5091ac4cd10246f', 'cost_usd': None, 'unique_scenarios': 14, 'passed_scenarios': 12, 'executed_steps': 48, 'assistant_turns': 17, 'failed_steps': 5, 'assistant_p50_ms': 6.7757200000642115, 'assistant_p95_ms': 23.809182199966017, 'model_calls': 0}

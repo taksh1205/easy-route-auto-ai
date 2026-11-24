@@ -1,0 +1,19 @@
+{
+  "generation": "83050a7cd23b4a408e8c7ed0c71af176",
+  "documents": 11,
+  "chunks": 11,
+  "identity": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "dimension": 384,
+    "normalization": "L2",
+    "metric": "inner_product",
+    "chunker": "words100_stride80_v1"
+  },
+  "backend": "faiss"
+}
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6705.78it/s]
+/workspace/scratch/72f146dc18fa/verify5/easy-route-auto/backend/app/rag.py:53: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  'dimension':encoder().get_sentence_embedding_dimension(),'normalization':'L2','metric':'inner_product','chunker':'words100_stride80_v1'}

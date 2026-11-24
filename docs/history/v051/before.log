@@ -1,0 +1,134 @@
+FFF..FF                                                                  [100%]
+=================================== FAILURES ===================================
+____________________ test_preserve_budget_despite_provider _____________________
+
+client = <starlette.testclient.TestClient object at 0x7f1a8dc2ed80>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a8ab495e0>
+
+    def test_preserve_budget_despite_provider(client, monkeypatch):
+        ask, snapshot = customer(client)
+        plan = dict(operation="edit", min_seats=7, budget_cents=120000, period="monthly")
+        provider(monkeypatch, lambda _: httpx.Response(200, json={"output": [
+            dict(type="function_call", name="rental_followup", call_id="fixture", arguments=json.dumps(plan))
+        ]}))
+        response = ask("Keep my budget and require seven seats").json()
+        saved = {**QUERY, "min_seats": 7}
+>       assert response["query"] == saved and response["vehicles"] == []
+E       AssertionError: assert ({'min_seats':... 'Tempe', ...} == {'body': 'suv...eats': 7, ...}
+E         
+E         Omitting 6 identical items, use -vv to show
+E         Differing items:
+E         {'budget_cents': 120000} != {'budget_cents': 95000}
+E         Use -v to get more diff)
+
+tests/test_patch51.py:18: AssertionError
+________________ test_upper_limit_clarifies[Under seven seats] _________________
+
+client = <starlette.testclient.TestClient object at 0x7f1a741b97c0>
+message = 'Under seven seats'
+
+    @pytest.mark.parametrize("message", ["Under seven seats", "Maximum of five seats", "Less than 7 seats"])
+    def test_upper_limit_clarifies(client, message):
+        ask, snapshot = customer(client)
+        before = snapshot()
+>       assert ask(message).json().get("clarification")
+E       AssertionError: assert None
+E        +  where None = <built-in method get of dict object at 0x7f1a73035c80>('clarification')
+E        +    where <built-in method get of dict object at 0x7f1a73035c80> = {'query': {'min_seats': 7, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [], 'turn': '5712fecf4479bd839ff1f9a4', 'vehicles': [], ...}.get
+E        +      where {'query': {'min_seats': 7, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [], 'turn': '5712fecf4479bd839ff1f9a4', 'vehicles': [], ...} = json()
+E        +        where json = <Response [200 OK]>.json
+E        +          where <Response [200 OK]> = <function customer.<locals>.ask at 0x7f1a73051d00>('Under seven seats')
+
+tests/test_patch51.py:29: AssertionError
+______________ test_upper_limit_clarifies[Maximum of five seats] _______________
+
+client = <starlette.testclient.TestClient object at 0x7f1a741b8470>
+message = 'Maximum of five seats'
+
+    @pytest.mark.parametrize("message", ["Under seven seats", "Maximum of five seats", "Less than 7 seats"])
+    def test_upper_limit_clarifies(client, message):
+        ask, snapshot = customer(client)
+        before = snapshot()
+>       assert ask(message).json().get("clarification")
+E       AssertionError: assert None
+E        +  where None = <built-in method get of dict object at 0x7f1a73070c00>('clarification')
+E        +    where <built-in method get of dict object at 0x7f1a73070c00> = {'query': {'min_seats': 5, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [6, 7], 'turn...Rogue', 'seats': 5, 'min_seats': 5, ...}, {'id': 7, 'name': '2017 Toyota RAV4', 'seats': 5, 'min_seats': 5, ...}], ...}.get
+E        +      where {'query': {'min_seats': 5, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [6, 7], 'turn...Rogue', 'seats': 5, 'min_seats': 5, ...}, {'id': 7, 'name': '2017 Toyota RAV4', 'seats': 5, 'min_seats': 5, ...}], ...} = json()
+E        +        where json = <Response [200 OK]>.json
+E        +          where <Response [200 OK]> = <function customer.<locals>.ask at 0x7f1a741b0180>('Maximum of five seats')
+
+tests/test_patch51.py:29: AssertionError
+________ test_record_scope[When does my reservation expire?-None-None] _________
+
+client = <starlette.testclient.TestClient object at 0x7f1a7307d370>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a7307e450>
+message = 'When does my reservation expire?', topic = None, phrase = None
+
+    @pytest.mark.parametrize("message,topic,phrase", [
+        ("When does my quote expire?", "rental_terms", "Quotes expire in fifteen minutes"),
+        ("When does my reservation expire?", None, None),
+        ("What happens if my extension overlaps someone else's booking?", "rental_changes", "original reservation stays active"),
+    ])
+    def test_record_scope(client, monkeypatch, message, topic, phrase):
+        from app.rag import PolicyIndex
+        from app.rental_evidence import assess
+        hits = [dict(doc_id=d["id"], text=d["text"]) for d in json.loads(Path("corpus/synthetic_policies.json").read_text())]
+        monkeypatch.setattr(PolicyIndex, "rental_answer", lambda _, question: assess(question, hits))
+        ask, snapshot = customer(client)
+        before = snapshot()
+        answer = ask(message).json()
+        assert answer["operation"] == "policy"
+        if topic:
+            assert any(c["doc_id"] == topic and phrase in c["text"] for c in answer["citations"])
+            assert not answer["unresolved"]
+        else:
+>           assert answer["citations"] == [] and answer["unresolved"]
+E           AssertionError: assert ([{'doc_id': '...en minutes.'}] == []
+E             
+E             Left contains one more item: {'doc_id': 'rental_terms', 'text': 'Quotes expire in fifteen minutes.'}
+E             Use -v to get more diff)
+
+tests/test_patch51.py:51: AssertionError
+_ test_record_scope[What happens if my extension overlaps someone else's booking?-rental_changes-original reservation stays active] _
+
+client = <starlette.testclient.TestClient object at 0x7f1a730692e0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a730684a0>
+message = "What happens if my extension overlaps someone else's booking?"
+topic = 'rental_changes', phrase = 'original reservation stays active'
+
+    @pytest.mark.parametrize("message,topic,phrase", [
+        ("When does my quote expire?", "rental_terms", "Quotes expire in fifteen minutes"),
+        ("When does my reservation expire?", None, None),
+        ("What happens if my extension overlaps someone else's booking?", "rental_changes", "original reservation stays active"),
+    ])
+    def test_record_scope(client, monkeypatch, message, topic, phrase):
+        from app.rag import PolicyIndex
+        from app.rental_evidence import assess
+        hits = [dict(doc_id=d["id"], text=d["text"]) for d in json.loads(Path("corpus/synthetic_policies.json").read_text())]
+        monkeypatch.setattr(PolicyIndex, "rental_answer", lambda _, question: assess(question, hits))
+        ask, snapshot = customer(client)
+        before = snapshot()
+        answer = ask(message).json()
+        assert answer["operation"] == "policy"
+        if topic:
+>           assert any(c["doc_id"] == topic and phrase in c["text"] for c in answer["citations"])
+E           assert False
+E            +  where False = any(<generator object test_record_scope.<locals>.<genexpr> at 0x7f1a741e8e40>)
+
+tests/test_patch51.py:48: AssertionError
+=============================== warnings summary ===============================
+../../../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_patch51.py::test_preserve_budget_despite_provider - Asserti...
+FAILED tests/test_patch51.py::test_upper_limit_clarifies[Under seven seats]
+FAILED tests/test_patch51.py::test_upper_limit_clarifies[Maximum of five seats]
+FAILED tests/test_patch51.py::test_record_scope[When does my reservation expire?-None-None]
+FAILED tests/test_patch51.py::test_record_scope[What happens if my extension overlaps someone else's booking?-rental_changes-original reservation stays active]
+5 failed, 2 passed, 1 warning in 1.00s

@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.venv
+.pytest_cache
+*.db
+rag_index
+.env
+tests/__pycache__

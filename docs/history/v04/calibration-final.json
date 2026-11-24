@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "query": "What do extra days cost after a full billing month?",
+      "labels": [
+        "rental_terms"
+      ],
+      "scores": {
+        "rental_terms": 0.42009758949279785,
+        "rental_changes": 0.23095087707042694,
+        "rental_documents": 0.06931783258914948,
+        "rental_pickup": 0.006098214536905289
+      }
+    },
+    {
+      "query": "Who signs off on adding nights and how are partial months charged?",
+      "labels": [
+        "rental_changes",
+        "rental_terms"
+      ],
+      "scores": {
+        "rental_terms": 0.38714057207107544,
+        "rental_changes": 0.31975436210632324,
+        "rental_documents": 0.09382244944572449,
+        "rental_pickup": 0.1297042816877365
+      }
+    },
+    {
+      "query": "Can the desk pay for my flight home?",
+      "labels": [],
+      "scores": {
+        "rental_pickup": 0.27774688601493835,
+        "rental_terms": 0.23918959498405457,
+        "rental_changes": 0.1733502447605133,
+        "rental_documents": 0.13748690485954285
+      }
+    },
+    {
+      "query": "Are pets covered under the rental damage waiver?",
+      "labels": [],
+      "scores": {
+        "rental_changes": 0.33662065863609314,
+        "rental_terms": 0.27691400051116943,
+        "rental_documents": 0.2575598657131195,
+        "rental_pickup": -0.04637443646788597
+      }
+    },
+    {
+      "query": "How do I collect the keys?",
+      "labels": [
+        "rental_pickup"
+      ],
+      "scores": {
+        "rental_pickup": 0.31065449118614197,
+        "rental_documents": 0.17151466012001038,
+        "rental_terms": 0.08577880263328552,
+        "rental_changes": 0.003921124152839184
+      }
+    },
+    {
+      "query": "How can I call off my rental?",
+      "labels": [
+        "rental_changes"
+      ],
+      "scores": {
+        "rental_changes": 0.5049337148666382,
+        "rental_documents": 0.41761401295661926,
+        "rental_terms": 0.43758901953697205,
+        "rental_pickup": 0.20843523740768433
+      }
+    }
+  ],
+  "grid_errors": {
+    "0.25": 6,
+    "0.26": 5,
+    "0.27": 5,
+    "0.28": 3,
+    "0.29": 3,
+    "0.3": 3,
+    "0.31": 3,
+    "0.32": 5,
+    "0.33": 5,
+    "0.34": 4,
+    "0.35": 4,
+    "0.36": 4,
+    "0.37": 4,
+    "0.38": 4,
+    "0.39": 5,
+    "0.4": 5,
+    "0.41": 5,
+    "0.42": 4,
+    "0.43": 5,
+    "0.44": 4,
+    "0.45": 4,
+    "0.46": 4,
+    "0.47": 4,
+    "0.48": 4,
+    "0.49": 4,
+    "0.5": 4,
+    "0.51": 5,
+    "0.52": 5,
+    "0.53": 5,
+    "0.54": 5,
+    "0.55": 5
+  },
+  "chosen": 0.31
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "command": [
+      "python",
+      "-m",
+      "alembic",
+      "upgrade",
+      "head"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "app.seed"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "app.ingest"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/rental.cjs"
+    ],
+    "exit_code": 0
+  }
+]

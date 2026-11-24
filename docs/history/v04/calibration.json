@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "query": "What do extra days cost after a full billing month?",
+      "labels": [
+        "rental_terms"
+      ],
+      "scores": {
+        "rental_terms": 0.32300347089767456,
+        "rental_changes": 0.226271852850914,
+        "rental_pickup": 0.02864251285791397
+      }
+    },
+    {
+      "query": "Who signs off on adding nights and how are partial months charged?",
+      "labels": [
+        "rental_changes",
+        "rental_terms"
+      ],
+      "scores": {
+        "rental_changes": 0.23753468692302704,
+        "rental_terms": 0.2806488275527954,
+        "rental_pickup": 0.15283802151679993
+      }
+    },
+    {
+      "query": "Can the desk pay for my flight home?",
+      "labels": [],
+      "scores": {
+        "rental_pickup": 0.2635069787502289,
+        "rental_terms": 0.20617514848709106,
+        "rental_changes": 0.15930381417274475
+      }
+    },
+    {
+      "query": "Are pets covered under the rental damage waiver?",
+      "labels": [],
+      "scores": {
+        "rental_changes": 0.32267698645591736,
+        "rental_terms": 0.26663482189178467,
+        "rental_pickup": -0.0184400025755167
+      }
+    },
+    {
+      "query": "How do I collect the keys?",
+      "labels": [
+        "rental_pickup"
+      ],
+      "scores": {
+        "rental_pickup": 0.12525387108325958,
+        "rental_terms": 0.08269190788269043,
+        "rental_changes": -0.010766814462840557
+      }
+    },
+    {
+      "query": "How can I call off my rental?",
+      "labels": [
+        "rental_changes"
+      ],
+      "scores": {
+        "rental_changes": 0.43415457010269165,
+        "rental_terms": 0.4104205369949341,
+        "rental_pickup": 0.22985661029815674
+      }
+    }
+  ],
+  "grid_errors": {
+    "0.25": 6,
+    "0.26": 6,
+    "0.27": 4,
+    "0.28": 4,
+    "0.29": 5,
+    "0.3": 5,
+    "0.31": 5,
+    "0.32": 5,
+    "0.33": 5,
+    "0.34": 5,
+    "0.35": 5,
+    "0.36": 5,
+    "0.37": 5,
+    "0.38": 5,
+    "0.39": 5,
+    "0.4": 5,
+    "0.41": 5,
+    "0.42": 4,
+    "0.43": 4,
+    "0.44": 5,
+    "0.45": 5,
+    "0.46": 5,
+    "0.47": 5,
+    "0.48": 5,
+    "0.49": 5,
+    "0.5": 5,
+    "0.51": 5,
+    "0.52": 5,
+    "0.53": 5,
+    "0.54": 5,
+    "0.55": 5
+  },
+  "chosen": 0.43
+}

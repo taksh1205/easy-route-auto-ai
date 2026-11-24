@@ -1,0 +1,35 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+________________ test_price_mention_does_not_raise_saved_budget ________________
+
+client = <starlette.testclient.TestClient object at 0x7efe77d54d40>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7efe8e581970>
+
+    def test_price_mention_does_not_raise_saved_budget(client, monkeypatch):
+        ask, snapshot = customer(client)
+        before = snapshot()
+        plan = dict(operation="edit", budget_cents=120000, period="monthly")
+        provider(monkeypatch, lambda _: httpx.Response(200, json={"output": [
+            dict(type="function_call", name="rental_followup", call_id="fixture", arguments=json.dumps(plan))
+        ]}))
+>       assert ask("Last year a rental cost me $1,200 monthly.").json().get("clarification")
+E       AssertionError: assert None
+E        +  where None = <built-in method get of dict object at 0x7efe76bfc0c0>('clarification')
+E        +    where <built-in method get of dict object at 0x7efe76bfc0c0> = {'query': {'min_seats': None, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [6, 7, 5],..., 'seats': 5, 'min_seats': None, ...}, {'id': 5, 'name': '2021 Kia Sorento', 'seats': 7, 'min_seats': None, ...}], ...}.get
+E        +      where {'query': {'min_seats': None, 'start': '2031-04-01', 'end': '2031-04-08', 'location': 'Tempe', ...}, 'ids': [6, 7, 5],..., 'seats': 5, 'min_seats': None, ...}, {'id': 5, 'name': '2021 Kia Sorento', 'seats': 7, 'min_seats': None, ...}], ...} = json()
+E        +        where json = <Response [200 OK]>.json
+E        +          where <Response [200 OK]> = <function customer.<locals>.ask at 0x7efe77da9a80>('Last year a rental cost me $1,200 monthly.')
+
+tests/test_patch51.py:62: AssertionError
+=============================== warnings summary ===============================
+../../../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_patch51.py::test_price_mention_does_not_raise_saved_budget
+1 failed, 1 passed, 7 deselected, 1 warning in 0.82s

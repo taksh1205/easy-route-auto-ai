@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "python",
+      "-m",
+      "alembic",
+      "upgrade",
+      "0001"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "alembic",
+      "upgrade",
+      "head"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "app.seed"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "alembic",
+      "check"
+    ],
+    "exit_code": 0
+  }
+]

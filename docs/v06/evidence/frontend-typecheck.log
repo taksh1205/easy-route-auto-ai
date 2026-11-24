@@ -1,0 +1,4 @@
+
+> easy-route-auto@0.6.0 typecheck
+> tsc --noEmit
+

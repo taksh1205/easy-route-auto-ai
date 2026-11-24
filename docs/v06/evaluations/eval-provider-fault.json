@@ -1,0 +1,280 @@
+{
+  "mode": "mocked_provider_fault",
+  "provider": null,
+  "model": null,
+  "dataset_sha256": "d9a9af1cf78554a9ae5ac57bd3cf827952b2e03b6e7fac2777f2c6e4222d0769",
+  "scenarios": [
+    {
+      "id": "provider-503",
+      "steps": [
+        {
+          "action": "search",
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "location": "Tempe",
+            "period": "monthly",
+            "body": "suv",
+            "budget_cents": 95000,
+            "min_seats": null
+          },
+          "expected": {
+            "ids": [
+              6,
+              7
+            ]
+          },
+          "provider_events": [],
+          "observed": {
+            "ids": [
+              6,
+              7
+            ]
+          },
+          "actual": {
+            "query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "ids": [
+              6,
+              7
+            ],
+            "turn": "f7e02017c905bbfabac29e0d",
+            "vehicles": [
+              {
+                "id": 6,
+                "name": "2018 Nissan Rogue",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 6,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 87500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4100
+                  }
+                ],
+                "total_cents": 28700
+              },
+              {
+                "id": 7,
+                "name": "2017 Toyota RAV4",
+                "seats": 5,
+                "min_seats": null,
+                "start": "2031-04-01",
+                "end": "2031-04-08",
+                "location": "Tempe",
+                "body": "suv",
+                "period": "monthly",
+                "budget_cents": 95000,
+                "vehicle_id": 7,
+                "currency": "USD",
+                "lines": [
+                  {
+                    "unit": "monthly",
+                    "count": 0,
+                    "unit_cents": 93500
+                  },
+                  {
+                    "unit": "daily",
+                    "count": 7,
+                    "unit_cents": 4400
+                  }
+                ],
+                "total_cents": 30800
+              }
+            ],
+            "http": 200,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null,
+            "selected": null,
+            "saved_query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "stored_ids": [
+              6,
+              7
+            ],
+            "provider_attempts": 0,
+            "evidence_docs": []
+          },
+          "passed": true,
+          "latency_ms": 28.9596289999281
+        },
+        {
+          "action": "stale_ask",
+          "message": "Quote the first car",
+          "expected": {
+            "http": 409,
+            "record_count": 0,
+            "provider_attempts": 0
+          },
+          "provider_events": [],
+          "observed": {
+            "http": 409,
+            "record_count": 0,
+            "provider_attempts": 0
+          },
+          "actual": {
+            "detail": "Refresh rental results before referring to them.",
+            "http": 409,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null,
+            "selected": null,
+            "saved_query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "stored_ids": [
+              6,
+              7
+            ],
+            "provider_attempts": 0,
+            "evidence_docs": []
+          },
+          "passed": true,
+          "latency_ms": 9.370275999913247
+        },
+        {
+          "action": "ask",
+          "message": "Please quote the first car",
+          "expected": {
+            "http": 502,
+            "record_count": 0,
+            "selected": null,
+            "provider_attempts": 1
+          },
+          "provider_events": [
+            {
+              "provider": "openai",
+              "model": "injected-503",
+              "attempted": true,
+              "completed": false,
+              "validated": false,
+              "error": "HTTPStatusError",
+              "usage": null,
+              "latency_ms": 1.625
+            }
+          ],
+          "observed": {
+            "http": 502,
+            "record_count": 0,
+            "selected": null,
+            "provider_attempts": 1
+          },
+          "actual": {
+            "detail": "Rental planning failed. Retry the request.",
+            "http": 502,
+            "record_count": 0,
+            "occupied": 0,
+            "original_status": null,
+            "selected": null,
+            "saved_query": {
+              "min_seats": null,
+              "start": "2031-04-01",
+              "end": "2031-04-08",
+              "location": "Tempe",
+              "body": "suv",
+              "period": "monthly",
+              "budget_cents": 95000
+            },
+            "stored_ids": [
+              6,
+              7
+            ],
+            "provider_attempts": 1,
+            "evidence_docs": []
+          },
+          "passed": true,
+          "latency_ms": 10.623267000028136
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "cost_usd": null,
+  "unique_scenarios": 1,
+  "passed_scenarios": 1,
+  "executed_steps": 3,
+  "assistant_turns": 1,
+  "failed_steps": 0,
+  "assistant_p50_ms": 10.623267000028136,
+  "assistant_p95_ms": 10.623267000028136,
+  "provider_usage": [],
+  "model_calls": 1,
+  "completed_calls": 0,
+  "validated_plans": 0,
+  "provider_errors": 1,
+  "metrics": {
+    "operation": {
+      "passed": 0,
+      "checks": 0
+    },
+    "arguments": {
+      "passed": 1,
+      "checks": 1
+    },
+    "constraints": {
+      "passed": 1,
+      "checks": 1
+    },
+    "task_completion": {
+      "passed": 1,
+      "scenarios": 1
+    },
+    "record_count": {
+      "passed": 2,
+      "checks": 2
+    },
+    "restored_query": {
+      "passed": 0,
+      "checks": 0
+    }
+  },
+  "safety": {
+    "checks": 2,
+    "unintended_quote_rows": 0,
+    "failed": 0,
+    "saved_constraint_checks": 0,
+    "silent_relaxations": 0,
+    "vehicles_checked": 0,
+    "vehicle_constraint_violations": 0
+  },
+  "tokens": {
+    "input_tokens": null,
+    "output_tokens": null
+  },
+  "gate": "all",
+  "gate_failed": false
+}

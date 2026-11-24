@@ -1,0 +1,10 @@
+{
+  "mode": "live",
+  "model": null,
+  "dataset_sha256": "bd193dc51aed58eae6f503eb05ff18e3d41ece3b099eac50d5091ac4cd10246f",
+  "scenarios": [],
+  "cost_usd": null,
+  "status": "unexecuted",
+  "reason": "Missing OPENAI_API_KEY or OPENAI_MODEL",
+  "model_calls": 0
+}

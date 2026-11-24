@@ -1,0 +1,18 @@
+{
+  "generation": "1e6153d299b443a5836d8a0c2e038e46",
+  "documents": 11,
+  "chunks": 11,
+  "identity": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "dimension": 384,
+    "normalization": "L2",
+    "metric": "inner_product",
+    "chunker": "words100_stride80_v1"
+  },
+  "backend": "faiss"
+}
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3845.96it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.

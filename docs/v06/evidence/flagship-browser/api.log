@@ -1,0 +1,36 @@
+INFO:     Started server process [6068]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:38012 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "OPTIONS /sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "POST /sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54096 - "OPTIONS /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "OPTIONS /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rental-discovery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "OPTIONS /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "OPTIONS /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/e278ef90-62bc-4169-b67c-fa2f188cf223/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "POST /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals/e278ef90-62bc-4169-b67c-fa2f188cf223/submit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "OPTIONS /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "OPTIONS /rental-staff/e278ef90-62bc-4169-b67c-fa2f188cf223/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "POST /rental-staff/e278ef90-62bc-4169-b67c-fa2f188cf223/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /rental-staff/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /sessions/c8c6e10f-2289-474b-8d85-b7c825fcff1b/rentals HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6068]

@@ -1,0 +1,30 @@
+{
+  "base_sha256": "2968c2f179a0ef2081e1e4af80f51571e3c095682353e55ee22cd2f3ac00f753",
+  "modified": [
+    ".github/workflows/ci.yml",
+    "README.md",
+    "backend/app/main.py",
+    "backend/app/rental_evidence.py",
+    "backend/app/rental_language.py",
+    "backend/app/rentals.py",
+    "backend/rental_eval.py",
+    "frontend/package-lock.json",
+    "frontend/package.json",
+    "frontend/tests/customer.cjs",
+    "frontend/tests/rental.cjs",
+    "scripts/rental_browser.py",
+    "scripts/verify_postgres.py",
+    "scripts/verify_release.py",
+    "scripts/verify_sqlite_upgrade.py"
+  ],
+  "added": [
+    "backend/evaluation/holdout_v051.json",
+    "backend/tests/test_patch51.py"
+  ],
+  "excluded_generated_test_files": [
+    "backend/pytest-of-agent/pytest-0/test_eval_index_isolation0/production/CURRENT",
+    "backend/pytest-of-agent/pytest-0/test_evaluator_gate0/bad.json",
+    "backend/pytest-of-agent/pytest-0/test_evaluator_gate0/tasks.json"
+  ],
+  "evidence_directory": "docs/v051"
+}

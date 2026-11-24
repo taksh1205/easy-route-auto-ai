@@ -1,0 +1,96 @@
+[
+  {
+    "name": "backend-neural-tests",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=../docs/v02/backend-junit.xml"
+    ],
+    "working_directory": "backend",
+    "exit_code": 0,
+    "log": "backend-neural-tests.txt"
+  },
+  {
+    "name": "deterministic-smoke",
+    "command": [
+      "python",
+      "benchmark.py"
+    ],
+    "working_directory": "backend",
+    "exit_code": 0,
+    "log": "deterministic-smoke.txt"
+  },
+  {
+    "name": "tasks-run",
+    "command": [
+      "python",
+      "evaluate.py",
+      "tasks"
+    ],
+    "working_directory": "backend",
+    "exit_code": 0,
+    "log": "tasks-run.txt"
+  },
+  {
+    "name": "live-status",
+    "command": [
+      "python",
+      "evaluate.py",
+      "live"
+    ],
+    "working_directory": "backend",
+    "exit_code": 0,
+    "log": "live-status.txt"
+  },
+  {
+    "name": "frontend-build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "log": "frontend-build.txt"
+  },
+  {
+    "name": "frontend-typecheck",
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "log": "frontend-typecheck.txt"
+  },
+  {
+    "name": "frontend-audit",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "log": "frontend-audit.txt"
+  },
+  {
+    "name": "secret-scan",
+    "command": [
+      "python",
+      "scripts/scan_secrets.py"
+    ],
+    "working_directory": ".",
+    "exit_code": 0,
+    "log": "secret-scan.txt"
+  },
+  {
+    "name": "docker-compose",
+    "status": "blocked",
+    "reason": "Docker executable unavailable"
+  }
+]

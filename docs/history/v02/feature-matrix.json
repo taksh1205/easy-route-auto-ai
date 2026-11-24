@@ -1,0 +1,80 @@
+[
+  {
+    "feature": "grounded_assistant",
+    "implementation": "implemented",
+    "evidence": "mocked_provider_and_local_SQL",
+    "limitation": "not_live_generative_tested"
+  },
+  {
+    "feature": "preferences_and_CAS",
+    "implementation": "implemented",
+    "evidence": "SQLite_and_PostgreSQL",
+    "limitation": "live_language_quality_unverified"
+  },
+  {
+    "feature": "neural_RAG_FAISS",
+    "implementation": "implemented",
+    "evidence": "actual_local_MiniLM",
+    "limitation": "not_mocked"
+  },
+  {
+    "feature": "cross_encoder",
+    "implementation": "implemented",
+    "evidence": "actual_local_model",
+    "limitation": "enabled_for_evaluation_optional_runtime"
+  },
+  {
+    "feature": "Pinecone",
+    "implementation": "implemented",
+    "evidence": "HTTP_mock_only",
+    "limitation": "live_service_unexecuted"
+  },
+  {
+    "feature": "vehicle_ranking",
+    "implementation": "implemented",
+    "evidence": "SQL_constraints_and_actual_optional_neural_scores",
+    "limitation": "no_trained_ranker"
+  },
+  {
+    "feature": "safe_actions",
+    "implementation": "implemented",
+    "evidence": "committed_SQL_and_failure_regressions",
+    "limitation": "explicit_confirmation_required"
+  },
+  {
+    "feature": "retention",
+    "implementation": "implemented",
+    "evidence": "both_databases",
+    "limitation": "operational_retention_duration_unfinished"
+  },
+  {
+    "feature": "frontend",
+    "implementation": "implemented",
+    "evidence": "production_build_and_typecheck",
+    "limitation": "browser_E2E_blocked"
+  },
+  {
+    "feature": "staff_identity_roles",
+    "implementation": "partial",
+    "evidence": "shared_token_authorization",
+    "limitation": "individual_authentication_deferred_local_only"
+  },
+  {
+    "feature": "Docker_Compose",
+    "implementation": "definitions_only",
+    "evidence": "not_executed",
+    "limitation": "blocked_Docker_unavailable"
+  },
+  {
+    "feature": "paid_generative_inference",
+    "implementation": "adapter_implemented",
+    "evidence": "HTTP_mocks_only",
+    "limitation": "credentials_unavailable"
+  },
+  {
+    "feature": "remote_CI",
+    "implementation": "configuration_only",
+    "evidence": "not_executed",
+    "limitation": "not_pushed"
+  }
+]

@@ -1,0 +1,63 @@
+The files belonging to this database system will be owned by user "agent".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory /tmp/easy-pg-validation-utf8 ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /home/agent/.local/lib/python3.12/site-packages/pgserver/pginstall/bin/pg_ctl -D /tmp/easy-pg-validation-utf8 -l logfile start
+
+2026-11-17 19:56:30.570 UTC [19] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit
+2026-11-17 19:56:30.570 UTC [19] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-11-17 19:56:30.571 UTC [22] LOG:  database system was shut down at 2026-11-17 19:56:30 UTC
+2026-11-17 19:56:30.573 UTC [19] LOG:  database system is ready to accept connections
+
+COMMAND: python -m alembic upgrade head
+
+COMMAND: python -m app.seed
+
+COMMAND: python -m alembic check
+No new upgrade operations detected.
+
+COMMAND: python -m pytest -q
+........2026-11-17 19:56:33.305 UTC [34] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-17 19:56:33.305 UTC [34] DETAIL:  Key (vehicle_id, slot)=(1, 1794945600) already exists.
+2026-11-17 19:56:33.305 UTC [34] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.2026-11-17 19:56:33.347 UTC [61] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-17 19:56:33.347 UTC [61] DETAIL:  Key (vehicle_id, slot)=(1, 1794945600) already exists.
+2026-11-17 19:56:33.347 UTC [61] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+...........                                                     [100%]
+=============================== warnings summary ===============================
+../../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 2 warnings in 1.08s
+2026-11-17 19:56:33.801 UTC [19] LOG:  received smart shutdown request
+2026-11-17 19:56:33.801 UTC [19] LOG:  background worker "logical replication launcher" (PID 25) exited with exit code 1
+2026-11-17 19:56:33.801 UTC [20] LOG:  shutting down
+2026-11-17 19:56:33.801 UTC [20] LOG:  checkpoint starting: shutdown immediate
+2026-11-17 19:56:33.804 UTC [20] LOG:  checkpoint complete: wrote 203 buffers (1.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=466, longest=0.001 s, average=0.001 s; distance=2833 kB, estimate=2833 kB; lsn=0/175B298, redo lsn=0/175B298
+2026-11-17 19:56:33.806 UTC [19] LOG:  database system is shut down

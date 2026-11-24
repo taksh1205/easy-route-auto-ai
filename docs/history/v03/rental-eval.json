@@ -1,0 +1,343 @@
+{
+  "dataset_sha256": "34ef436e7b05564ed890c98dd4c0fbcf49c4218219e74ee92eebb422e775dd79",
+  "mode": "deterministic",
+  "cases": [
+    {
+      "expected": {
+        "utterance": "Compare the first two",
+        "operation": "compare"
+      },
+      "expected_ids": [
+        6,
+        7
+      ],
+      "actual": {
+        "comparison": [
+          {
+            "id": 6,
+            "name": "2018 Nissan Rogue",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 6,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 87500
+              }
+            ],
+            "total_cents": 87500
+          },
+          {
+            "id": 7,
+            "name": "2017 Toyota RAV4",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 7,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 93500
+              }
+            ],
+            "total_cents": 93500
+          }
+        ],
+        "seat_difference": 0,
+        "operation": "compare",
+        "usage": null
+      },
+      "pass": true,
+      "latency_ms": 10.686450000093828,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "utterance": "Does the second one have more seats?",
+        "operation": "seats"
+      },
+      "expected_ids": [
+        6,
+        7
+      ],
+      "actual": {
+        "comparison": [
+          {
+            "id": 6,
+            "name": "2018 Nissan Rogue",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 6,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 87500
+              }
+            ],
+            "total_cents": 87500
+          },
+          {
+            "id": 7,
+            "name": "2017 Toyota RAV4",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 7,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 93500
+              }
+            ],
+            "total_cents": 93500
+          }
+        ],
+        "seat_difference": 0,
+        "operation": "seats",
+        "usage": null
+      },
+      "pass": true,
+      "latency_ms": 6.646308999961548,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "utterance": "Make it a month instead",
+        "operation": "month"
+      },
+      "expected_ids": [
+        6,
+        7
+      ],
+      "actual": {
+        "query": {
+          "start": "2031-03-01",
+          "end": "2031-04-01",
+          "location": "Tempe",
+          "body": "suv",
+          "period": "monthly",
+          "budget_cents": 95000
+        },
+        "ids": [
+          6,
+          7
+        ],
+        "turn": "b129dcedc37e9b9de51a4658",
+        "vehicles": [
+          {
+            "id": 6,
+            "name": "2018 Nissan Rogue",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 6,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 87500
+              }
+            ],
+            "total_cents": 87500
+          },
+          {
+            "id": 7,
+            "name": "2017 Toyota RAV4",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 7,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 93500
+              }
+            ],
+            "total_cents": 93500
+          }
+        ],
+        "operation": "month",
+        "usage": null
+      },
+      "pass": true,
+      "latency_ms": 7.097083999951792,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "utterance": "Keep the same budget but switch to an SUV",
+        "operation": "suv"
+      },
+      "expected_ids": [
+        6,
+        7
+      ],
+      "actual": {
+        "query": {
+          "start": "2031-03-01",
+          "end": "2031-04-01",
+          "location": "Tempe",
+          "body": "suv",
+          "period": "monthly",
+          "budget_cents": 95000
+        },
+        "ids": [
+          6,
+          7
+        ],
+        "turn": "2a223776b4cfc4cc351e837d",
+        "vehicles": [
+          {
+            "id": 6,
+            "name": "2018 Nissan Rogue",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 6,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 87500
+              }
+            ],
+            "total_cents": 87500
+          },
+          {
+            "id": 7,
+            "name": "2017 Toyota RAV4",
+            "seats": 5,
+            "start": "2031-03-01",
+            "end": "2031-04-01",
+            "location": "Tempe",
+            "body": "suv",
+            "period": "monthly",
+            "budget_cents": 95000,
+            "vehicle_id": 7,
+            "currency": "USD",
+            "lines": [
+              {
+                "unit": "monthly",
+                "count": 1,
+                "unit_cents": 93500
+              }
+            ],
+            "total_cents": 93500
+          }
+        ],
+        "operation": "suv",
+        "usage": null
+      },
+      "pass": true,
+      "latency_ms": 5.625790000067354,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "step": "ambiguous budget",
+        "outcome": "Is your budget daily, weekly or monthly?"
+      },
+      "actual": "Is your budget daily, weekly or monthly?",
+      "pass": true,
+      "latency_ms": 7.1913580000000366,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "step": "selected vehicle and exact monthly quote",
+        "outcome": [
+          7,
+          93500,
+          "quoted"
+        ]
+      },
+      "actual": [
+        7,
+        93500,
+        "quoted"
+      ],
+      "pass": true,
+      "latency_ms": 11.160716999938813,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "step": "modified quote rejected",
+        "outcome": 409
+      },
+      "actual": 409,
+      "pass": true,
+      "latency_ms": 8.516360999919925,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "step": "accepted terms go to review",
+        "outcome": "pending"
+      },
+      "actual": "pending",
+      "pass": true,
+      "latency_ms": 8.449078000012378,
+      "error_category": null
+    },
+    {
+      "expected": {
+        "step": "staff approval survives reload",
+        "outcome": true
+      },
+      "actual": true,
+      "pass": true,
+      "latency_ms": 23.863263999828632,
+      "error_category": null
+    }
+  ],
+  "cost_usd": null,
+  "model": null,
+  "unique_connected_scenarios": 1,
+  "executed_turns": 9,
+  "p50_ms": 8.449078000012378,
+  "p95_ms": 18.7822451998727,
+  "failed": 0
+}

@@ -1,0 +1,527 @@
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-web Building 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate Building 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-index Building 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-api Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 4.92kB done
+#1 DONE 0.0s
+
+#2 [index internal] load build definition from Dockerfile.backend
+#2 transferring dockerfile: 938B done
+#2 DONE 0.0s
+
+#3 [web internal] load build definition from Dockerfile.frontend
+#3 transferring dockerfile: 508B done
+#3 DONE 0.0s
+
+#4 [migrate context ccr] load .dockerignore
+#4 transferring ccr: 2B done
+#4 DONE 0.0s
+
+#5 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.0s
+
+#6 [web internal] load metadata for docker.io/library/node:22-slim
+#6 DONE 0.0s
+
+#7 [migrate internal] load .dockerignore
+#7 transferring context: 116B done
+#7 DONE 0.0s
+
+#8 [web internal] load .dockerignore
+#8 transferring context: 91B done
+#8 DONE 0.0s
+
+#9 [index stage-0 1/8] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#9 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#9 DONE 0.0s
+
+#10 [web stage-0 1/7] FROM docker.io/library/node:22-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
+#10 resolve docker.io/library/node:22-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee 0.0s done
+#10 DONE 0.0s
+
+#11 [api context ccr] load from client
+#11 transferring ccr: 36B done
+#11 DONE 0.0s
+
+#12 [web internal] load build context
+#12 transferring context: 1.08kB done
+#12 DONE 0.0s
+
+#13 [api internal] load build context
+#13 transferring context: 37.36kB done
+#13 DONE 0.0s
+
+#14 [web stage-0 3/7] WORKDIR /app
+#14 CACHED
+
+#15 [web stage-0 2/7] COPY --from=ccr ca-bundle.crt /usr/local/share/ca-certificates/proxy.crt
+#15 CACHED
+
+#16 [web stage-0 4/7] COPY package*.json ./
+#16 CACHED
+
+#17 [index stage-0 2/8] COPY --from=ccr ca-bundle.crt /usr/local/share/ca-certificates/proxy.crt
+#17 CACHED
+
+#18 [index stage-0 3/8] WORKDIR /app
+#18 CACHED
+
+#19 [index stage-0 4/8] COPY requirements.txt .
+#19 CACHED
+
+#20 [migrate stage-0 5/8] RUN pip install --no-cache-dir torch==2.15.0+cpu --index-url https://download.pytorch.org/whl/cpu
+#20 1.092 Looking in indexes: https://download.pytorch.org/whl/cpu
+#20 1.488 Collecting torch==2.15.0+cpu
+#20 1.842   Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.15.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (35 kB)
+#20 1.886 Collecting filelock (from torch==2.15.0+cpu)
+#20 2.027   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+#20 2.189 Collecting typing-extensions>=4.13.0 (from torch==2.15.0+cpu)
+#20 2.209   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#20 2.227 Collecting setuptools>=77.0.3 (from torch==2.15.0+cpu)
+#20 2.243   Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+#20 2.272 Collecting sympy>=1.13.3 (from torch==2.15.0+cpu)
+#20 2.291   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#20 2.322 Collecting networkx>=2.5.1 (from torch==2.15.0+cpu)
+#20 2.341   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+#20 2.363 Collecting jinja2 (from torch==2.15.0+cpu)
+#20 2.379   Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#20 2.407 Collecting fsspec>=0.8.5 (from torch==2.15.0+cpu)
+#20 2.427   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#20 2.468 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.15.0+cpu)
+#20 2.487   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#20 2.512 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.15.0+cpu)
+#20 2.532   Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#20 2.570 Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.15.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (209.5 MB)
+#20 6.285    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.5/209.5 MB 56.9 MB/s eta 0:00:00
+#20 6.305 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#20 6.363 Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+#20 6.413    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 54.6 MB/s eta 0:00:00
+#20 6.430 Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+#20 6.452    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 54.9 MB/s eta 0:00:00
+#20 6.472 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#20 6.515    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 149.8 MB/s eta 0:00:00
+#20 6.536 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#20 6.558 Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+#20 6.576 Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#20 6.592 Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#20 6.611 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#20 6.613    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 398.4 MB/s eta 0:00:00
+#20 6.902 Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+#20 ...
+
+#21 [web stage-0 5/7] RUN npm ci
+#21 8.046 
+#21 8.046 added 35 packages, and audited 36 packages in 8s
+#21 8.046 
+#21 8.046 8 packages are looking for funding
+#21 8.046   run `npm fund` for details
+#21 8.046 
+#21 8.046 found 0 vulnerabilities
+#21 8.049 npm notice
+#21 8.049 npm notice New major version of npm available! 10.9.9 -> 12.2.3
+#21 8.049 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+#21 8.049 npm notice To update run: npm install -g npm@12.2.3
+#21 8.049 npm notice
+#21 DONE 9.1s
+
+#22 [web stage-0 6/7] COPY . .
+#22 DONE 0.1s
+
+#23 [web stage-0 7/7] RUN npm run build && chown -R node:node /app
+#23 0.126 
+#23 0.126 > easy-route-auto@0.6.0 build
+#23 0.126 > next build --webpack
+#23 0.126 
+#23 0.519 ▲ Next.js 16.4.6 (webpack)
+#23 0.550 ✓ Running next.config.ts took 30ms
+#23 0.554 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+#23 0.554 This information is used to shape Next.js' roadmap and prioritize features.
+#23 0.554 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#23 0.554 https://nextjs.org/telemetry
+#23 0.554 
+#23 0.589 
+#23 0.620   Creating an optimized production build ...
+#23 5.787 ✓ Compiled successfully in 3.7s
+#23 5.791   Running TypeScript ...
+#23 7.337   Finished TypeScript in 1546ms ...
+#23 7.340   Collecting page data using 3 workers ...
+#23 8.069   Generating static pages using 3 workers (0/4) ...
+#23 8.293   Generating static pages using 3 workers (1/4) 
+#23 8.293   Generating static pages using 3 workers (2/4) 
+#23 8.293   Generating static pages using 3 workers (3/4) 
+#23 8.293 ✓ Generating static pages using 3 workers (4/4) in 224ms
+#23 8.419   Finalizing page optimization ...
+#23 8.419   Collecting build traces ...
+#23 ...
+
+#20 [migrate stage-0 5/8] RUN pip install --no-cache-dir torch==2.15.0+cpu --index-url https://download.pytorch.org/whl/cpu
+#20 22.35 Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 setuptools-78.1.0 sympy-1.14.0 torch-2.15.0+cpu typing-extensions-4.16.0
+#20 22.35 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 DONE 23.6s
+
+#24 [api stage-0 6/8] RUN pip install --no-cache-dir -r requirements.txt
+#24 0.524 Collecting fastapi==0.141.1 (from -r requirements.txt (line 1))
+#24 0.571   Downloading fastapi-0.141.1-py3-none-any.whl.metadata (27 kB)
+#24 0.605 Collecting uvicorn==0.52.1 (from -r requirements.txt (line 2))
+#24 0.623   Downloading uvicorn-0.52.1-py3-none-any.whl.metadata (6.6 kB)
+#24 0.837 Collecting SQLAlchemy==2.1.9 (from -r requirements.txt (line 3))
+#24 0.915   Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+#24 0.947 Collecting alembic==1.20.1 (from -r requirements.txt (line 4))
+#24 0.967   Downloading alembic-1.20.1-py3-none-any.whl.metadata (7.3 kB)
+#24 0.991 Collecting psycopg==3.3.9 (from psycopg[binary]==3.3.9->-r requirements.txt (line 5))
+#24 1.010   Downloading psycopg-3.3.9-py3-none-any.whl.metadata (4.4 kB)
+#24 1.038 Collecting httpx==0.28.1 (from -r requirements.txt (line 6))
+#24 1.056   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#24 1.084 Collecting pydantic-settings==2.15.0 (from -r requirements.txt (line 7))
+#24 1.104   Downloading pydantic_settings-2.15.0-py3-none-any.whl.metadata (3.9 kB)
+#24 1.142 Collecting pytest==9.2.0 (from -r requirements.txt (line 8))
+#24 1.160   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+#24 1.187 Collecting sentence-transformers==6.3.0 (from -r requirements.txt (line 9))
+#24 1.206   Downloading sentence_transformers-6.3.0-py3-none-any.whl.metadata (20 kB)
+#24 1.245 Collecting faiss-cpu==1.16.0 (from -r requirements.txt (line 10))
+#24 1.266   Downloading faiss_cpu-1.16.0-cp310-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (7.8 kB)
+#24 1.287 Collecting rank-bm25==0.2.2 (from -r requirements.txt (line 11))
+#24 1.307   Downloading rank_bm25-0.2.2-py3-none-any.whl.metadata (3.2 kB)
+#24 1.433 Collecting numpy==2.3.5 (from -r requirements.txt (line 12))
+#24 1.454   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#24 1.480 Collecting socksio==1.0.0 (from -r requirements.txt (line 13))
+#24 1.499   Downloading socksio-1.0.0-py3-none-any.whl.metadata (6.1 kB)
+#24 1.532 Collecting starlette>=0.46.0 (from fastapi==0.141.1->-r requirements.txt (line 1))
+#24 1.551   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#24 1.639 Collecting pydantic>=2.9.0 (from fastapi==0.141.1->-r requirements.txt (line 1))
+#24 1.659   Downloading pydantic-2.14.4-py3-none-any.whl.metadata (143 kB)
+#24 1.665 Requirement already satisfied: typing-extensions>=4.8.0 in /usr/local/lib/python3.12/site-packages (from fastapi==0.141.1->-r requirements.txt (line 1)) (4.16.0)
+#24 1.684 Collecting typing-inspection>=0.4.2 (from fastapi==0.141.1->-r requirements.txt (line 1))
+#24 1.703   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#24 1.723 Collecting annotated-doc>=0.0.2 (from fastapi==0.141.1->-r requirements.txt (line 1))
+#24 1.744   Downloading annotated_doc-0.0.7-py3-none-any.whl.metadata (6.4 kB)
+#24 1.770 Collecting click>=7.0 (from uvicorn==0.52.1->-r requirements.txt (line 2))
+#24 1.788   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#24 1.809 Collecting h11>=0.8 (from uvicorn==0.52.1->-r requirements.txt (line 2))
+#24 1.827   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#24 1.862 Collecting Mako (from alembic==1.20.1->-r requirements.txt (line 4))
+#24 1.882   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+#24 1.909 Collecting anyio (from httpx==0.28.1->-r requirements.txt (line 6))
+#24 1.927   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#24 1.953 Collecting certifi (from httpx==0.28.1->-r requirements.txt (line 6))
+#24 1.972   Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+#24 1.997 Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 6))
+#24 2.016   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#24 2.041 Collecting idna (from httpx==0.28.1->-r requirements.txt (line 6))
+#24 2.060   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#24 2.098 Collecting python-dotenv>=0.21.0 (from pydantic-settings==2.15.0->-r requirements.txt (line 7))
+#24 2.117   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+#24 2.142 Collecting iniconfig>=2 (from pytest==9.2.0->-r requirements.txt (line 8))
+#24 2.161   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+#24 2.187 Collecting packaging>=24 (from pytest==9.2.0->-r requirements.txt (line 8))
+#24 2.206   Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+#24 2.230 Collecting pluggy<2,>=1.6 (from pytest==9.2.0->-r requirements.txt (line 8))
+#24 2.248   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+#24 2.276 Collecting pygments>=2.15 (from pytest==9.2.0->-r requirements.txt (line 8))
+#24 2.295   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#24 2.351 Collecting transformers<6.0.0,>=5.0.0 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.370   Downloading transformers-5.24.0-py3-none-any.whl.metadata (31 kB)
+#24 2.501 Collecting tokenizers>=0.19 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.521   Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+#24 2.573 Collecting huggingface-hub<3.0.0,>=1.3.0 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.593   Downloading huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+#24 2.604 Requirement already satisfied: torch>=2.2 in /usr/local/lib/python3.12/site-packages (from sentence-transformers==6.3.0->-r requirements.txt (line 9)) (2.15.0+cpu)
+#24 2.669 Collecting scikit-learn>=1.1.0 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.688   Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#24 2.831 Collecting scipy>=1.0.0 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.850   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#24 2.899 Collecting tqdm>=4.0.0 (from sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 2.917   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#24 ...
+
+#23 [web stage-0 7/7] RUN npm run build && chown -R node:node /app
+#23 14.51 
+#23 14.51 Route (app)
+#23 14.51 ┌ ○ /
+#23 14.51 ├ ○ /_not-found
+#23 14.51 └ ○ /rentals
+#23 14.51 
+#23 14.51 
+#23 14.51 ○  (Static)  prerendered as static content
+#23 14.51 
+#23 DONE 17.6s
+
+#24 [api stage-0 6/8] RUN pip install --no-cache-dir -r requirements.txt
+#24 3.033 Collecting psycopg-binary==3.3.9 (from psycopg[binary]==3.3.9->-r requirements.txt (line 5))
+#24 3.052   Downloading psycopg_binary-3.3.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+#24 3.071 Requirement already satisfied: filelock>=3.10.0 in /usr/local/lib/python3.12/site-packages (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (4.2.4)
+#24 3.071 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/site-packages (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (2026.9.0)
+#24 3.131 Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.150   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#24 3.174 Collecting httpx2<3,>=2.0.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.193   Downloading httpx2-2.16.2-py3-none-any.whl.metadata (10.0 kB)
+#24 3.233 Collecting pyyaml>=5.1 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.252   Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+#24 3.290 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.141.1->-r requirements.txt (line 1))
+#24 3.309   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#24 3.778 Collecting pydantic-core==2.50.5 (from pydantic>=2.9.0->fastapi==0.141.1->-r requirements.txt (line 1))
+#24 3.798   Downloading pydantic_core-2.50.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#24 3.839 Collecting joblib>=1.4.0 (from scikit-learn>=1.1.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.858   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#24 3.899 Collecting narwhals>=2.0.1 (from scikit-learn>=1.1.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.919   Downloading narwhals-2.29.0-py3-none-any.whl.metadata (15 kB)
+#24 3.942 Collecting threadpoolctl>=3.5.0 (from scikit-learn>=1.1.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 3.963   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#24 3.995 Requirement already satisfied: setuptools>=77.0.3 in /usr/local/lib/python3.12/site-packages (from torch>=2.2->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (78.1.0)
+#24 3.995 Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/site-packages (from torch>=2.2->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (1.14.0)
+#24 3.996 Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/site-packages (from torch>=2.2->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (3.7)
+#24 3.996 Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/site-packages (from torch>=2.2->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (3.1.6)
+#24 4.314 Collecting regex>=2025.10.22 (from transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.335   Downloading regex-2026.11.23-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#24 4.369 Collecting typer (from transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.390   Downloading typer-0.29.2-py3-none-any.whl.metadata (16 kB)
+#24 4.466 Collecting safetensors>=0.8.0 (from transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.484   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+#24 4.500 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/site-packages (from Mako->alembic==1.20.1->-r requirements.txt (line 4)) (3.0.3)
+#24 4.534 Collecting httpcore2==2.16.2 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.555   Downloading httpcore2-2.16.2-py3-none-any.whl.metadata (28 kB)
+#24 4.577 Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.595   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+#24 4.621 Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn>=1.1.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.643   Downloading cloudpickle-3.1.3-py3-none-any.whl.metadata (7.1 kB)
+#24 4.654 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/site-packages (from sympy>=1.13.3->torch>=2.2->sentence-transformers==6.3.0->-r requirements.txt (line 9)) (1.3.0)
+#24 4.687 Collecting shellingham>=1.3.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.705   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+#24 4.745 Collecting rich>=13.8.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.767   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+#24 4.794 Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.815   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+#24 4.846 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers<6.0.0,>=5.0.0->sentence-transformers==6.3.0->-r requirements.txt (line 9))
+#24 4.864   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#24 4.886 Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+#24 4.906 Downloading uvicorn-0.52.1-py3-none-any.whl (79 kB)
+#24 4.926 Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+#24 4.955    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 187.5 MB/s eta 0:00:00
+#24 4.975 Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#24 4.996 Downloading psycopg-3.3.9-py3-none-any.whl (219 kB)
+#24 5.014 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#24 5.034 Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+#24 5.054 Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+#24 5.073 Downloading sentence_transformers-6.3.0-py3-none-any.whl (780 kB)
+#24 5.077    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 780.3/780.3 kB 268.1 MB/s eta 0:00:00
+#24 5.098 Downloading faiss_cpu-1.16.0-cp310-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (19.5 MB)
+#24 5.194    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 210.7 MB/s eta 0:00:00
+#24 5.212 Downloading rank_bm25-0.2.2-py3-none-any.whl (8.6 kB)
+#24 5.230 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+#24 5.343    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 156.7 MB/s eta 0:00:00
+#24 5.363 Downloading socksio-1.0.0-py3-none-any.whl (12 kB)
+#24 5.383 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#24 5.402 Downloading psycopg_binary-3.3.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.9 MB)
+#24 5.419    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 279.8 MB/s eta 0:00:00
+#24 5.439 Downloading annotated_doc-0.0.7-py3-none-any.whl (5.3 kB)
+#24 5.458 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#24 5.478 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#24 5.497 Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+#24 5.502    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 1.3 GB/s eta 0:00:00
+#24 5.522 Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+#24 5.540 Downloading packaging-26.4-py3-none-any.whl (140 kB)
+#24 5.559 Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+#24 5.578 Downloading pydantic-2.14.4-py3-none-any.whl (494 kB)
+#24 5.598 Downloading pydantic_core-2.50.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#24 5.608    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 546.5 MB/s eta 0:00:00
+#24 5.628 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#24 5.632    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 583.6 MB/s eta 0:00:00
+#24 5.653 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#24 5.671 Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.2 MB)
+#24 5.728    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 182.3 MB/s eta 0:00:00
+#24 5.747 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#24 5.995    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 145.9 MB/s eta 0:00:00
+#24 6.017 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#24 6.038 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#24 6.057 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#24 6.080 Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+#24 6.091    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 372.4 MB/s eta 0:00:00
+#24 6.110 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#24 6.128 Downloading transformers-5.24.0-py3-none-any.whl (13.5 MB)
+#24 6.207    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 170.8 MB/s eta 0:00:00
+#24 6.228 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#24 6.246 Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+#24 6.267 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#24 6.286 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#24 6.306 Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+#24 6.328    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 203.5 MB/s eta 0:00:00
+#24 6.347 Downloading httpx2-2.16.2-py3-none-any.whl (97 kB)
+#24 6.368 Downloading httpcore2-2.16.2-py3-none-any.whl (85 kB)
+#24 6.389 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#24 6.408 Downloading narwhals-2.29.0-py3-none-any.whl (501 kB)
+#24 6.430 Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (849 kB)
+#24 6.433    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.2/849.2 kB 1.4 GB/s eta 0:00:00
+#24 6.456 Downloading regex-2026.11.23-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (809 kB)
+#24 6.459    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 809.2/809.2 kB 872.4 MB/s eta 0:00:00
+#24 6.480 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+#24 6.502 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#24 6.521 Downloading typer-0.29.2-py3-none-any.whl (121 kB)
+#24 6.540 Downloading cloudpickle-3.1.3-py3-none-any.whl (22 kB)
+#24 6.560 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+#24 6.579 Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#24 6.599 Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+#24 6.617 Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+#24 6.636 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#24 6.891 Installing collected packages: typing-inspection, truststore, tqdm, threadpoolctl, SQLAlchemy, socksio, shellingham, safetensors, regex, pyyaml, python-dotenv, pygments, pydantic-core, psycopg-binary, psycopg, pluggy, packaging, numpy, narwhals, mdurl, Mako, iniconfig, idna, hf-xet, h11, cloudpickle, click, certifi, annotated-types, annotated-doc, uvicorn, scipy, rank-bm25, pytest, pydantic, markdown-it-py, joblib, httpcore2, httpcore, faiss-cpu, anyio, alembic, starlette, scikit-learn, rich, pydantic-settings, httpx2, httpx, typer, huggingface-hub, fastapi, tokenizers, transformers, sentence-transformers
+#24 ...
+
+#25 [web] exporting to image
+#25 exporting layers
+#25 exporting layers 17.5s done
+#25 exporting manifest sha256:2e87928d274bc7afe8afe3b60de4f5f98a3c877c17f5e8e7396628bd1b192e70 done
+#25 exporting config sha256:9d5de732ca6fe37e25d0b6b9844a9c542c9a2d04af8e0c9bcb1efb219c1510a9 done
+#25 exporting attestation manifest sha256:bf6dd44fc0dc9d72e1ca37e53eab2c9f195e04960ce7940d7be6a7e134aa5fca done
+#25 exporting manifest list sha256:fdf5cfedc9a5d99156d199209f30e1cbf0f8a8404484997ec08ada3456a2f79a done
+#25 naming to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-web:latest done
+#25 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-web:latest
+#25 ...
+
+#24 [api stage-0 6/8] RUN pip install --no-cache-dir -r requirements.txt
+#24 23.99 Successfully installed Mako-1.4.3 SQLAlchemy-2.1.9 alembic-1.20.1 annotated-doc-0.0.7 annotated-types-0.8.0 anyio-4.16.0 certifi-2026.11.20 click-8.5.1 cloudpickle-3.1.3 faiss-cpu-1.16.0 fastapi-0.141.1 h11-0.16.0 hf-xet-1.8.0 httpcore-1.0.9 httpcore2-2.16.2 httpx-0.28.1 httpx2-2.16.2 huggingface-hub-2.4.0 idna-3.20 iniconfig-2.3.1 joblib-1.6.0 markdown-it-py-4.3.0 mdurl-0.1.2 narwhals-2.29.0 numpy-2.3.5 packaging-26.4 pluggy-1.7.0 psycopg-3.3.9 psycopg-binary-3.3.9 pydantic-2.14.4 pydantic-core-2.50.5 pydantic-settings-2.15.0 pygments-2.21.0 pytest-9.2.0 python-dotenv-1.2.4 pyyaml-6.0.4 rank-bm25-0.2.2 regex-2026.11.23 rich-15.0.0 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.18.1 sentence-transformers-6.3.0 shellingham-1.5.4 socksio-1.0.0 starlette-1.10.0 threadpoolctl-3.8.0 tokenizers-0.23.3 tqdm-4.70.1 transformers-5.24.0 truststore-0.10.5 typer-0.29.2 typing-inspection-0.4.5 uvicorn-0.52.1
+#24 23.99 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#24 24.08 
+#24 24.08 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#24 24.08 [notice] To update, run: pip install --upgrade pip
+#24 DONE 25.6s
+
+#26 [migrate stage-0 7/8] COPY . .
+#26 DONE 0.1s
+
+#27 [api stage-0 8/8] RUN useradd -m app && mkdir -p /data/rag /home/app/.cache && chown -R app:app /app /data /home/app/.cache
+#27 DONE 1.3s
+
+#25 [web] exporting to image
+#25 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-web:latest 6.4s done
+#25 DONE 24.0s
+
+#28 [web] resolving provenance for metadata file
+#28 DONE 0.0s
+
+#29 [api] exporting to image
+#29 exporting layers
+#29 ...
+
+#30 [migrate] exporting to image
+#30 ...
+
+#31 [index] exporting to image
+#31 exporting layers 22.6s done
+#31 exporting manifest sha256:b6db6b7c923590978e9f1ee1542f3f95114ba3499c12b1d059079003ce4032b3 done
+#31 exporting config sha256:5f78bce1ea0fa7e8073383760823069105c3fe462f9310f5754040caf86eec1d done
+#31 exporting attestation manifest sha256:d12ec12fb2dfe84f1afd29e4de5819ee9e4de5ed26d13cb38f2c5f4497e4bb3b done
+#31 exporting manifest list sha256:df5e3b2686b0408517c87ed1838d8b2a2e778674e51e4ca64c0b70cfdcc4b3e8 done
+#31 naming to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-index:latest done
+#31 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-index:latest
+#31 ...
+
+#29 [api] exporting to image
+#29 exporting layers 22.6s done
+#29 exporting manifest sha256:b1a4eb1302ccaa6971cdcbfa40cc8ee798ae3606841db615dff81ea4d3289679 done
+#29 exporting config sha256:35df2e2d8dc264433ea74ad9fee9cbf11a7ec05c16940543cac3bb0160293dc5 done
+#29 exporting attestation manifest sha256:7e29cd6815d8ed80d2313321b01c8c1c99f7a70faf55009dc90fc3e3e36dbce4 done
+#29 exporting manifest list sha256:f6ed53d1248f7fbe15b6292eaef5ab1daf9343ece10f4c47d9234e72d124ad43 done
+#29 naming to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-api:latest done
+#29 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-api:latest
+#29 ...
+
+#30 [migrate] exporting to image
+#30 exporting layers 22.6s done
+#30 exporting manifest sha256:718694f488642ccf6ca83e148a1ea8955e74cd8a04ba4903e39f0f8d91d9acff done
+#30 exporting config sha256:f10344d564b69f3af49951fdaa5e84f9e78dad58c8db938674dc100d3ccd51cb done
+#30 exporting attestation manifest sha256:8da27fb6ea1d6e8b0adf11ede6cd4e654c95c25b6557a9033afcecfdacf03a46 0.0s done
+#30 exporting manifest list sha256:dfce70298035d92dfa37f9b01862a9e6a89af4eea8157b3f3b76c81066dd419c done
+#30 naming to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate:latest done
+#30 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate:latest
+#30 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate:latest 10.7s done
+#30 DONE 33.3s
+
+#31 [index] exporting to image
+#31 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-index:latest 10.7s done
+#31 DONE 33.3s
+
+#29 [api] exporting to image
+#29 unpacking to docker.io/library/easycheckdb3c2fbcaa1946d48c5752a87d81894a-api:latest 10.7s done
+#29 DONE 33.3s
+
+#32 [index] resolving provenance for metadata file
+#32 DONE 0.0s
+
+#33 [migrate] resolving provenance for metadata file
+#33 DONE 0.0s
+
+#34 [api] resolving provenance for metadata file
+#34 DONE 0.0s
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-index Built 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate Built 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-api Built 
+ Image easycheckdb3c2fbcaa1946d48c5752a87d81894a-web Built 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_modelcache Creating 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_pgdata Creating 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_ragdata Creating 
+ Network easycheckdb3c2fbcaa1946d48c5752a87d81894a_default Creating 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_modelcache Created 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_ragdata Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Creating 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_pgdata Created 
+ Network easycheckdb3c2fbcaa1946d48c5752a87d81894a_default Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Creating 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Creating 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Creating 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Creating 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Created 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Starting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Starting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Waiting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Waiting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Healthy 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Starting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Waiting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Exited 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Exited 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Starting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Starting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Restarting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Restarting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Restarting 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Started 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Started 
+{"reservation": "bbb5d19c-a98d-44dd-8fbf-a131a5850fca", "status": "confirmed", "occupied": ["2026-12-04", "2026-12-05"], "restart_verified": true}
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Stopping 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Stopped 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Removing 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-web-1 Removed 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Stopping 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Stopped 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Removing 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-api-1 Removed 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Stopping 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Stopping 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Stopped 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Removing 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Stopped 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Removing 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-migrate-1 Removed 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Stopping 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-index-1 Removed 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Stopped 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Removing 
+ Container easycheckdb3c2fbcaa1946d48c5752a87d81894a-db-1 Removed 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_modelcache Removing 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_pgdata Removing 
+ Network easycheckdb3c2fbcaa1946d48c5752a87d81894a_default Removing 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_modelcache Removed 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_ragdata Removing 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_pgdata Removed 
+ Volume easycheckdb3c2fbcaa1946d48c5752a87d81894a_ragdata Removed 
+ Network easycheckdb3c2fbcaa1946d48c5752a87d81894a_default Removed 

@@ -1,0 +1,371 @@
+[
+  {
+    "id": "discovery",
+    "steps": [
+      {
+        "action": "discover",
+        "message": "Find me a Tempe SUV for 2031-04-01 through 2031-04-08 with a maximum of $950 monthly",
+        "expected": {
+          "operation": "edit",
+          "ids": [
+            6,
+            7
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "location": "Tempe",
+            "period": "monthly",
+            "body": "suv",
+            "budget_cents": 95000,
+            "min_seats": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "seating",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "I need at least seven seats",
+        "expected": {
+          "operation": "edit",
+          "ids": [],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "location": "Tempe",
+            "period": "monthly",
+            "body": "suv",
+            "budget_cents": 95000,
+            "min_seats": 7
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "lower-cap",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Change my budget to at most $900 monthly",
+        "expected": {
+          "operation": "edit",
+          "ids": [
+            6
+          ],
+          "query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "location": "Tempe",
+            "period": "monthly",
+            "body": "suv",
+            "budget_cents": 90000,
+            "min_seats": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "floor",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "I need at least $950 monthly",
+        "expected": {
+          "clarifies": true,
+          "saved_query": {
+            "start": "2031-04-01",
+            "end": "2031-04-08",
+            "location": "Tempe",
+            "period": "monthly",
+            "body": "suv",
+            "budget_cents": 95000,
+            "min_seats": null
+          },
+          "stored_ids": [
+            6,
+            7
+          ],
+          "record_count": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "explicit-selection",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Please select the first car",
+        "expected": {
+          "operation": "select",
+          "selected": 6
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Compare the first two",
+        "expected": {
+          "operation": "compare",
+          "selected": 6
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Please quote that vehicle",
+        "expected": {
+          "operation": "quote",
+          "quote.terms.vehicle_id": 6,
+          "record_count": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "ambiguous",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Compare the first two",
+        "expected": {
+          "selected": null
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Quote it",
+        "expected": {
+          "clarifies": true,
+          "selected": null,
+          "record_count": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "declined",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Hold off on quoting the second car for now",
+        "expected": {
+          "clarifies": true,
+          "record_count": 0,
+          "selected": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "conditional",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Quote the first one once my partner agrees",
+        "expected": {
+          "clarifies": true,
+          "record_count": 0,
+          "selected": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "compound",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "ask",
+        "message": "Who approves an extension and what rate applies to extra days?",
+        "expected": {
+          "operation": "policy",
+          "cites": "rental_terms",
+          "evidence_docs": [
+            "rental_changes",
+            "rental_terms"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "stale-preflight",
+    "steps": [
+      {
+        "action": "search",
+        "query": {
+          "start": "2031-04-01",
+          "end": "2031-04-08",
+          "location": "Tempe",
+          "period": "monthly",
+          "body": "suv",
+          "budget_cents": 95000,
+          "min_seats": null
+        },
+        "expected": {
+          "ids": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "action": "stale_ask",
+        "message": "Quote the first car",
+        "expected": {
+          "http": 409,
+          "record_count": 0,
+          "provider_attempts": 0
+        }
+      }
+    ]
+  }
+]

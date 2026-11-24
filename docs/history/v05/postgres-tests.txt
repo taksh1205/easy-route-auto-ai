@@ -1,0 +1,81 @@
+The files belonging to this database system will be owned by user "agent".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory /tmp/easy_pg_51fww4ab/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /tmp/er5venv/lib/python3.12/site-packages/pgserver/pginstall/bin/pg_ctl -D /tmp/easy_pg_51fww4ab/data -l logfile start
+
+2026-11-20 17:53:48.874 UTC [20] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit
+2026-11-20 17:53:48.874 UTC [20] LOG:  listening on IPv4 address "127.0.0.1", port 55415
+2026-11-20 17:53:48.877 UTC [23] LOG:  database system was shut down at 2026-11-20 17:53:48 UTC
+2026-11-20 17:53:48.880 UTC [20] LOG:  database system is ready to accept connections
+('PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 10.2.1 20210130 (Red Hat 10.2.1-11), 64-bit',)
+
+COMMAND: python -m alembic upgrade 0001
+
+COMMAND: python -m alembic upgrade head
+
+COMMAND: python -m app.seed
+PASS: v0.1 upgrade preserves existing SQL price/availability and adds attributes
+
+COMMAND: python -m alembic check
+No new upgrade operations detected.
+
+COMMAND: python -m pytest -q
+...................................ssss2026-11-20 17:54:05.033 UTC [48] ERROR:  duplicate key value violates unique constraint "rental_days_pkey"
+2026-11-20 17:54:05.033 UTC [48] DETAIL:  Key (vehicle_id, day)=(7, 2031-04-01) already exists.
+2026-11-20 17:54:05.033 UTC [48] STATEMENT:  INSERT INTO rental_days (vehicle_id, day, reservation) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR)
+.2026-11-20 17:54:05.780 UTC [48] ERROR:  duplicate key value violates unique constraint "rental_days_pkey"
+2026-11-20 17:54:05.780 UTC [48] DETAIL:  Key (vehicle_id, day)=(7, 2031-03-01) already exists.
+2026-11-20 17:54:05.780 UTC [48] STATEMENT:  INSERT INTO rental_days (vehicle_id, day, reservation) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR)
+......s......................... [ 67%]
+......................2026-11-20 17:54:18.783 UTC [48] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-20 17:54:18.783 UTC [48] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-20 17:54:18.783 UTC [48] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.2026-11-20 17:54:18.910 UTC [121] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-20 17:54:18.910 UTC [121] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-20 17:54:18.910 UTC [121] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+.2026-11-20 17:54:19.076 UTC [48] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-20 17:54:19.076 UTC [48] DETAIL:  Key (vehicle_id, slot)=(1, 1906563600) already exists.
+2026-11-20 17:54:19.076 UTC [48] STATEMENT:  UPDATE appointments SET slot=$1::INTEGER WHERE appointments.id = $2::VARCHAR
+.......2026-11-20 17:54:19.997 UTC [121] ERROR:  duplicate key value violates unique constraint "uq_active_vehicle_slot"
+2026-11-20 17:54:19.997 UTC [121] DETAIL:  Key (vehicle_id, slot)=(1, 1906560000) already exists.
+2026-11-20 17:54:19.997 UTC [121] STATEMENT:  INSERT INTO appointments (id, conversation_id, vehicle_id, slot, cancelled) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::INTEGER, $5)
+..2026-11-20 17:54:20.263 UTC [121] ERROR:  update or delete on table "conversations" violates foreign key constraint "fk_appointments_conversation" on table "appointments"
+2026-11-20 17:54:20.263 UTC [121] DETAIL:  Key (id)=(afd7175d-3998-49bd-87c0-b20dc7303c59) is still referenced from table "appointments".
+2026-11-20 17:54:20.263 UTC [121] STATEMENT:  DELETE FROM conversations WHERE conversations.id = $1::VARCHAR
+.                                       [100%]2026-11-20 17:54:20.303 UTC [21] LOG:  checkpoint starting: immediate force wait
+2026-11-20 17:54:20.313 UTC [21] LOG:  checkpoint complete: wrote 109 buffers (0.7%); 0 WAL file(s) added, 0 removed, 2 recycled; write=0.010 s, sync=0.001 s, total=0.011 s; sync files=102, longest=0.001 s, average=0.001 s; distance=36892 kB, estimate=36892 kB; lsn=0/389DFD0, redo lsn=0/389DF98
+
+=============================== warnings summary ===============================
+../../../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+101 passed, 5 skipped, 1 warning in 24.17s
+2026-11-20 17:54:21.212 UTC [20] LOG:  received smart shutdown request
+2026-11-20 17:54:21.214 UTC [20] LOG:  background worker "logical replication launcher" (PID 26) exited with exit code 1
+2026-11-20 17:54:21.228 UTC [21] LOG:  shutting down
+2026-11-20 17:54:21.228 UTC [21] LOG:  checkpoint starting: shutdown immediate
+2026-11-20 17:54:21.229 UTC [21] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=33203 kB; lsn=0/389E0F0, redo lsn=0/389E0F0
+2026-11-20 17:54:21.249 UTC [20] LOG:  database system is shut down

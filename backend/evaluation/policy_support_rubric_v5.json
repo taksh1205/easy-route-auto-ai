@@ -1,0 +1,10 @@
+{
+  "f1":{"staff_detail":"time"},
+  "f2":{"support":["coordinate a meeting time"],"staff_detail":"time"},
+  "f3":{"staff_detail":"permission"},
+  "f4":{"support":["new extension quote and staff review"],"staff_detail":"fee"},
+  "f5":{"staff_detail":"fee"},
+  "f6":{"support":["expire in fifteen minutes"]},
+  "f7":{"support":["original reservation stays active"]},
+  "f8":{"support":["Do not upload identity documents"]}
+}

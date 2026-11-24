@@ -1,0 +1,4 @@
+{"message": "Don\u2019t quote the first one", "http": 200, "before": {"selected": null, "records": []}, "operation": "quote", "after": {"selected": 6, "records": [[6, "quoted"]]}}
+{"message": "Quote the second only after I confirm", "http": 200, "before": {"selected": null, "records": []}, "operation": "quote", "after": {"selected": 7, "records": [[7, "quoted"]]}}
+{"message": "Compare the first two", "http": 200, "before": {"selected": null, "records": []}, "operation": "compare", "after": {"selected": 7, "records": []}}
+{"message": "Quote that vehicle", "http": 200, "before": {"selected": 7, "records": []}, "operation": "quote", "after": {"selected": 7, "records": [[7, "quoted"]]}}
